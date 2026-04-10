@@ -37,7 +37,7 @@ export function RoomsHero() {
     <section ref={containerRef} className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-foreground">
       {/* Immersive Background */}
       <div className="rooms-bg absolute inset-0 z-0">
-        <Image 
+        <Image
           src="/new/DSC04031.jpg"
           alt="Peninsula Grand Interiors"
           fill
@@ -49,7 +49,7 @@ export function RoomsHero() {
 
       <div className="relative z-10 text-center px-6">
         <p className="rooms-sub text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-3 md:mb-10 pl-1">The Collection</p>
-        <h1 className="text-3xl sm:text-5xl lg:text-[11vw] font-serif text-background tracking-tighter leading-tight lg:leading-none perspective-1000 flex flex-nowrap justify-center">
+        <h1 className="text-2xl sm:text-4xl lg:text-[9vw] font-serif text-background tracking-tighter leading-tight lg:leading-none perspective-1000 flex flex-nowrap justify-center">
           {title.split("").map((char, i) => (
             <span key={i} className="char inline-block origin-bottom text-glow-white">
               {char === " " ? "\u00A0" : char}

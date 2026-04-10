@@ -37,7 +37,7 @@ export function ContactHero() {
     <section ref={containerRef} className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-foreground">
       {/* Immersive Background */}
       <div className="contact-bg absolute inset-0 z-0">
-        <Image 
+        <Image
           src="/new/DSC04025.jpg"
           alt="Peninsula Grand Concierge"
           fill
@@ -50,7 +50,7 @@ export function ContactHero() {
 
       <div className="relative z-10 text-center px-6">
         <p className="contact-sub text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-3 md:mb-10 pl-1">Global Directory</p>
-        <h1 className="text-4xl sm:text-6xl lg:text-[12vw] font-serif text-background tracking-tighter leading-tight lg:leading-none perspective-1000 flex flex-nowrap justify-center">
+        <h1 className="text-3xl sm:text-5xl lg:text-[9.5vw] font-serif text-background tracking-tighter leading-tight lg:leading-none perspective-1000 flex flex-nowrap justify-center">
           {title.split("").map((char, i) => (
             <span key={i} className="char inline-block origin-bottom text-glow-white">
               {char === " " ? "\u00A0" : char}
