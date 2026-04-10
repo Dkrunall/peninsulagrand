@@ -51,8 +51,7 @@ export function AboutHero() {
 
       <div className="relative z-10 text-center px-6">
         <p className="subtitle text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-3 md:mb-8 pl-1">Since 1994</p>
-        <h1 
-          ref={titleRef}
+        <h1
           className="text-4xl sm:text-6xl lg:text-[12vw] font-serif text-background tracking-tighter leading-tight lg:leading-none perspective-1000 flex flex-nowrap justify-center"
         >
           {title.split("").map((char, i) => (
