@@ -86,7 +86,7 @@ export function ModernFooter() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-20 border-t border-background/5 flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
+        <div className="pt-8 md:pt-20 border-t border-background/5 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12 text-center md:text-left">
           <div className="flex items-center justify-center p-4 bg-background rounded-full shadow-2xl group cursor-pointer hover:bg-gold transition-all duration-700" data-cursor="pointer">
             <Image 
               src="/pgh.png" 

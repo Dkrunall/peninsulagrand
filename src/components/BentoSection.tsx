@@ -1,106 +1,88 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Trees, Utensils, Wifi, Car, Waves, Martini } from "lucide-react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { Wifi, Car, Utensils, Coffee, Phone, Users, Dumbbell, Waves } from "lucide-react";
 
 const AMENITIES = [
-  { icon: Wifi, title: "Free Internet", desc: "High-speed gigabit connectivity throughout the entire estate.", span: "md:col-span-2 md:row-span-1", image: "/new/DSC03915.jpg" },
-  { icon: Car, title: "Free Parking", desc: "Complimentary, secure on-site parking for all our guests.", span: "md:col-span-1 md:row-span-1", image: "/new/DSC05946.jpg" },
-  { icon: Utensils, title: "On-Site Restaurant", desc: "World-class dining destinations right within the hotel premises.", span: "md:col-span-1 md:row-span-2", image: "/new/DSC05707.jpg" },
-  { icon: Waves, title: "Room Service", desc: "Exquisite culinary experiences delivered directly to your door.", span: "md:col-span-2 md:row-span-1", image: "/new/DSC03976.jpg" },
-  { icon: Trees, title: "Laundry Service", desc: "Professional garment care to keep you looking your absolute best.", span: "md:col-span-1 md:row-span-1", image: "/new/DSC05866.jpg" },
-  { icon: Martini, title: "Concierge & Meeting", desc: "Expert assistance and state-of-the-art corporate facilities.", span: "md:col-span-2 md:row-span-1", image: "/new/DSC05998.jpg" },
+  { icon: Wifi,     title: "Free High-Speed WiFi",  desc: "Gigabit internet throughout the hotel.",             image: "/new/DSC03915.jpg" },
+  { icon: Car,      title: "Free Parking",           desc: "Complimentary secure on-site parking.",             image: "/new/DSC05946.jpg" },
+  { icon: Utensils, title: "4 Restaurants",          desc: "Indian, Continental & more — all on-site.",         image: "/new/DSC05707.jpg" },
+  { icon: Coffee,   title: "24/7 Room Service",      desc: "Food & beverages delivered anytime to your door.",  image: "/new/DSC03976.jpg" },
+  { icon: Dumbbell, title: "Fitness Centre",         desc: "Fully equipped gym, open all day.",                 image: "/new/DSC05866.jpg" },
+  { icon: Users,    title: "Banquet & Events",       desc: "Halls for weddings, conferences & private events.", image: "/new/DSC05998.jpg" },
+  { icon: Phone,    title: "24/7 Concierge",         desc: "Our team handles travel, bookings & more.",         image: "/new/DSC04025.jpg" },
+  { icon: Waves,    title: "Laundry Service",        desc: "Professional garment care on request.",             image: "/new/DSC04050.jpg" },
 ];
 
 export function BentoSection() {
-  const containerRef = useRef<HTMLElement>(null);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    
-    const ctx = gsap.context(() => {
-      if (!isMounted) return;
-
-      gsap.fromTo(".bento-item", 
-        { scale: 0.9, opacity: 0, y: 40 },
-        {
-          scale: 1,
-          opacity: 1,
-          y: 0,
-          stagger: 0.05,
-          duration: 1.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-          },
-        }
-      );
-    }, containerRef);
-    return () => ctx.revert();
-  }, [isMounted]);
-
   return (
-    <section ref={containerRef} className="py-16 md:py-32 px-6 md:px-12 bg-background-secondary min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
-      {/* Background Decorative Element */}
-      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-gold/5 rounded-full blur-[100px] -z-0"></div>
-      
-      <div className="max-w-7xl w-full relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-8 md:gap-12">
-          <div className="max-w-2xl">
-            <p className="text-[10px] uppercase tracking-[0.5em] font-black text-gold mb-4 md:mb-6 border-l-2 border-gold pl-4 ml-1">Elite Experience</p>
-            <h3 className="text-2xl md:text-5xl font-serif text-foreground leading-[1.1] md:leading-[1] tracking-tight">
-              Unparalleled comfort <br/> <span className="italic">reimagined.</span>
-            </h3>
+    <section className="bg-background py-20 md:py-28 px-6 md:px-16" id="amenities">
+
+      {/* Header */}
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12 md:mb-16">
+          <div>
+            <p className="text-[9px] uppercase tracking-[0.8em] font-black text-gold mb-3 italic">What's Included</p>
+            <h2 className="text-2xl md:text-4xl font-serif text-foreground tracking-tighter leading-tight">
+              Everything You Need, <br className="hidden md:block" />
+              <span className="italic text-gold font-light">Already Here</span>
+            </h2>
           </div>
-          <div className="max-w-xs space-y-4">
-             <div className="w-12 h-[1px] bg-gold"></div>
-             <p className="text-foreground/60 italic text-base md:text-xl leading-relaxed">
-              "Our amenities and exceptional dining options create the perfect environment for both business and leisure."
-             </p>
-          </div>
+          <p className="text-sm text-foreground/45 leading-relaxed max-w-xs italic">
+            All amenities are included with every booking — no hidden fees.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-7 p-2 md:p-3 rounded-[32px] md:rounded-[40px] bg-foreground/[0.01] border border-foreground/5 items-stretch">
+        {/* Modern card grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {AMENITIES.map((item, i) => (
-            <div 
-              key={i} 
-              className={`bento-item glass group relative p-8 md:p-10 rounded-[28px] md:rounded-[36px] flex flex-col justify-between overflow-hidden cursor-default transition-all duration-[800ms] hover:shadow-[0_40px_80px_-20px_rgba(212,175,55,0.2)] hover:-translate-y-2 border border-white/10 ${item.span}`}
-              data-cursor="pointer"
+            <div
+              key={i}
+              className="group relative rounded-2xl overflow-hidden cursor-default"
+              style={{ aspectRatio: "1 / 1.1" }}
             >
-              {/* Refined Cinematic Background Image */}
-              <div className="absolute inset-0 -z-10 bg-background overflow-hidden">
-                <Image 
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[1500ms] ease-out"
-                />
-                {/* Subtle dark vignette for text contrast instead of white fog */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60"></div>
-              </div>
+              {/* Background image */}
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                sizes="(max-width: 640px) 50vw, 25vw"
+                className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+              />
 
-              <div className="relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-10 group-hover:bg-gold/20 transition-all duration-700 border border-white/10">
-                  <item.icon className="w-7 h-7 text-gold drop-shadow-[0_0_8px_rgba(212,175,55,0.4)] group-hover:scale-110 transition-transform duration-700" />
+              {/* Always-on dark overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
+
+              {/* Hover tint */}
+              <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/10 transition-colors duration-500" />
+
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col justify-between p-4 md:p-5">
+                {/* Icon top-left */}
+                <div className="w-9 h-9 md:w-11 md:h-11 rounded-xl bg-gold flex items-center justify-center shadow-lg flex-shrink-0">
+                  <item.icon className="w-4 h-4 md:w-5 md:h-5 text-black" />
                 </div>
-                <h4 className="text-2xl md:text-3xl font-serif text-white mb-4 group-hover:text-gold transition-colors duration-500 text-glow-white">
-                  {item.title}
-                </h4>
+
+                {/* Text bottom */}
+                <div>
+                  <h4 className="text-sm md:text-base font-bold text-white leading-snug mb-1 group-hover:text-gold transition-colors duration-300">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-white/55 leading-relaxed hidden sm:block group-hover:text-white/80 transition-colors duration-300">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
-              <p className="text-sm md:text-base text-white/80 leading-relaxed font-serif italic group-hover:text-white transition-colors duration-500 relative z-10">
-                {item.desc}
-              </p>
-              
-              {/* Internal border for depth */}
-              <div className="absolute inset-4 border border-white/5 rounded-[24px] pointer-events-none group-hover:border-white/10 transition-colors duration-700"></div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom strip */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-6 md:gap-10 py-6 border-t border-foreground/5">
+          {["Free WiFi", "Free Parking", "Breakfast Included", "24/7 Service", "No Hidden Charges"].map((t, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-gold" />
+              <span className="text-xs font-semibold text-foreground/45 uppercase tracking-wide">{t}</span>
             </div>
           ))}
         </div>

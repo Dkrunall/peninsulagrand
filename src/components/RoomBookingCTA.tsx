@@ -5,7 +5,7 @@ import { Room } from "@/data/rooms";
 
 export function RoomBookingCTA({ room }: { room: Room }) {
   return (
-    <section className="py-40 bg-foreground relative overflow-hidden">
+    <section className="py-16 md:py-40 bg-foreground relative overflow-hidden">
       {/* Background Kinetic Text */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
         <span className="text-[30vw] md:text-[20vw] font-serif font-black text-background/[0.03] uppercase tracking-tighter whitespace-nowrap">

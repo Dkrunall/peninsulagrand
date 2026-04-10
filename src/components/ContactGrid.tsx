@@ -75,7 +75,7 @@ export function ContactGrid() {
           <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background/40 via-transparent to-transparent"></div>
           
           {/* Social Pills */}
-          <div className="absolute bottom-12 left-12 flex gap-4 z-10">
+          <div className="absolute bottom-6 left-6 flex gap-4 z-10">
              <div className="glass p-5 rounded-full border-white/10 hover:bg-gold group/social transition-all duration-500 cursor-pointer shadow-2xl">
                 <Instagram className="w-6 h-6 text-foreground group-hover/social:text-background" />
              </div>

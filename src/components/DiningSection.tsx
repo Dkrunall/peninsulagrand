@@ -116,9 +116,9 @@ export function DiningSection() {
 
         <div className="outlet-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {DINING_OUTLETS.map((outlet, i) => (
-            <div 
+            <div
               key={i}
-              className="outlet-card glass group relative aspect-[3/5] rounded-[48px] overflow-hidden transition-all duration-1000 hover:shadow-[0_40px_1000px_-20px_rgba(212,175,55,0.3)] cursor-pointer"
+              className="outlet-card glass group relative aspect-[4/3] md:aspect-[3/5] rounded-[32px] md:rounded-[48px] overflow-hidden transition-all duration-1000 hover:shadow-[0_40px_1000px_-20px_rgba(212,175,55,0.3)] cursor-pointer"
               data-cursor="reserve"
             >
               {/* Background Image with Cinematic Hover */}
@@ -140,8 +140,8 @@ export function DiningSection() {
               </div>
 
               {/* Content Overlay */}
-              <div className="absolute inset-0 p-10 flex flex-col justify-end z-10">
-                <div className="transform translate-y-24 group-hover:translate-y-0 transition-transform duration-1000 ease-in-out">
+              <div className="absolute inset-0 p-5 md:p-10 flex flex-col justify-end z-10">
+                <div className="transform translate-y-0 md:translate-y-24 md:group-hover:translate-y-0 transition-transform duration-1000 ease-in-out">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-md group-hover:border-gold group-hover:bg-gold transition-all duration-700">
                       <outlet.icon className="w-4 h-4 text-white group-hover:text-foreground" />
@@ -149,11 +149,11 @@ export function DiningSection() {
                     <span className="text-[10px] uppercase tracking-[0.3em] font-black text-white/60">{outlet.type}</span>
                   </div>
 
-                  <h3 className="text-4xl font-serif text-white mb-6 group-hover:text-gold transition-colors duration-500 uppercase">
+                  <h3 className="text-xl md:text-3xl font-serif text-white mb-4 md:mb-6 group-hover:text-gold transition-colors duration-500 uppercase">
                     {outlet.name}
                   </h3>
 
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-1000 delay-100">
+                  <div className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-1000 delay-100">
                     <p className="text-sm text-white/80 leading-relaxed mb-8 font-medium italic">
                       {outlet.desc}
                     </p>

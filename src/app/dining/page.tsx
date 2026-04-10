@@ -16,7 +16,7 @@ export default function DiningPage() {
       </div>
       
       {/* Global Culinary CTA */}
-      <section className="py-40 bg-foreground text-center px-6 relative overflow-hidden">
+      <section className="py-16 md:py-40 bg-foreground text-center px-6 relative overflow-hidden">
         {/* Decorative background text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <span className="text-[30vw] font-serif font-black text-white/[0.03] uppercase tracking-tighter">Alchemy</span>
@@ -24,14 +24,14 @@ export default function DiningPage() {
 
         <div className="max-w-4xl mx-auto relative z-10">
           <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-10 pl-1 italic">Private Gatherings</p>
-          <h2 className="text-3xl md:text-5xl font-serif text-background mb-16 leading-tight">
-             Elevate your events with our <br/> <span className="italic text-gold">bespoke</span> culinary service.
+          <h2 className="text-2xl md:text-5xl font-serif text-background mb-8 md:mb-16 leading-tight">
+             Elevate your events with our <span className="italic text-gold">bespoke</span> culinary service.
           </h2>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-            <button className="bg-background text-foreground px-16 py-6 rounded-full font-black text-xs uppercase tracking-[0.4em] hover:bg-gold hover:text-background transition-all duration-700 shadow-2xl">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8">
+            <button className="w-full sm:w-auto bg-background text-foreground px-10 md:px-16 py-5 md:py-6 rounded-full font-black text-xs uppercase tracking-[0.4em] hover:bg-gold hover:text-background transition-all duration-700 shadow-2xl">
               Inquire for Events
             </button>
-            <button className="border border-white/20 text-background px-16 py-6 rounded-full font-black text-xs uppercase tracking-[0.4em] hover:bg-white/10 transition-all duration-700">
+            <button className="w-full sm:w-auto border border-white/20 text-background px-10 md:px-16 py-5 md:py-6 rounded-full font-black text-xs uppercase tracking-[0.4em] hover:bg-white/10 transition-all duration-700">
               Download All Menus
             </button>
           </div>

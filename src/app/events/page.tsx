@@ -22,23 +22,23 @@ export default function EventsPage() {
       />
 
       {/* Corporate Excellence Section */}
-      <section className="py-40 bg-background px-6 md:px-12 relative overflow-hidden">
-        <div className="absolute top-0 right-0 p-40 opacity-[0.02] pointer-events-none">
+      <section className="py-16 md:py-40 bg-background px-6 md:px-12 relative overflow-hidden">
+        <div className="absolute top-0 right-0 opacity-[0.02] pointer-events-none overflow-hidden">
            <span className="text-[40vw] font-serif font-black uppercase">Events</span>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-32 items-center">
             <div>
-               <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-10 italic">Venue Portfolio</p>
-               <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-12 tracking-tighter leading-tight italic">
+               <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-6 md:mb-10 italic">Venue Portfolio</p>
+               <h2 className="text-2xl md:text-5xl font-serif text-foreground mb-6 md:mb-12 tracking-tighter leading-tight italic">
                  Where <span className="text-gold font-light">Ambition</span> meets its match.
                </h2>
-               <p className="text-xl text-foreground/60 font-serif leading-relaxed italic mb-12 pr-10">
+               <p className="text-base md:text-xl text-foreground/60 font-serif leading-relaxed italic mb-6 md:mb-12 md:pr-10">
                  From global summits in the Concorde Hall to strategic boardroom sessions, Peninsula Grand provides the architectural gravitas and technological infrastructure to elevate every corporate milestone.
                </p>
-               
-               <div className="space-y-12">
+
+               <div className="space-y-6 md:space-y-12">
                   <div className="group border-l border-foreground/5 pl-8 hover:border-gold transition-colors duration-700">
                      <h3 className="text-2xl font-serif text-foreground mb-4 italic group-hover:text-gold transition-colors">Concorde & Grand Pavillion</h3>
                      <p className="text-sm text-foreground/40 leading-relaxed max-w-md">Our signature halls designed for up to 800 guests, featuring state-of-the-art acoustics and flexible configurations.</p>
@@ -50,7 +50,7 @@ export default function EventsPage() {
                </div>
             </div>
 
-            <div className="relative aspect-[4/5] rounded-[64px] overflow-hidden shadow-2xl">
+            <div className="relative aspect-[4/5] rounded-[32px] md:rounded-[64px] overflow-hidden shadow-2xl">
                <Image 
                  src="/new/DSC05924.jpg"
                  alt="Event Grandeur"

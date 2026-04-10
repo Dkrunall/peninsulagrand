@@ -19,8 +19,8 @@
   --color-slate: hsl(var(--accent-slate));
   --color-gold: hsl(var(--gold));
   
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-cormorant);
   
   --radius-pill: 9999px;
   --radius-bento: 32px;
@@ -33,7 +33,7 @@
     font-family: var(--font-sans), sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    letter-spacing: -0.01em;
+    letter-spacing: 0em;
   }
 
   /* Remove default blue browser focus outline everywhere */
@@ -97,6 +97,15 @@
 
   .text-glow-white {
     text-shadow: 0 2px 20px rgba(255,255,255,0.15);
+  }
+
+  /* Cinematic Overlays */
+  .hero-vignette {
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+  }
+  .cinematic-mask {
+    mask-image: radial-gradient(circle at center, black 0%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 100%);
   }
 
   /* Hide scrollbar cross-browser while keeping scroll functionality */

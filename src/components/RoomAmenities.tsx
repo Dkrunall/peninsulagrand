@@ -5,7 +5,7 @@ import { Room } from "@/data/rooms";
 
 export function RoomAmenities({ room }: { room: Room }) {
   return (
-    <section className="py-40 bg-background px-6 md:px-12">
+    <section className="py-16 md:py-40 bg-background px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-32">
         
         {/* Narrative Side */}
@@ -31,7 +31,7 @@ export function RoomAmenities({ room }: { room: Room }) {
         </div>
 
         {/* Global Directory Side (Amenities) */}
-        <div className="bg-slate/5 rounded-[64px] p-12 md:p-20 border border-foreground/5 relative overflow-hidden">
+        <div className="bg-slate/5 rounded-[32px] md:rounded-[64px] p-6 md:p-12 lg:p-20 border border-foreground/5 relative overflow-hidden">
            <div className="absolute top-0 right-0 p-12 opacity-5">
               <Star className="w-40 h-40 text-foreground" />
            </div>

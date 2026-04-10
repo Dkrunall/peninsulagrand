@@ -1,284 +1,243 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, BedDouble, Users } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Phone } from "lucide-react";
 
 const ROOMS = [
   {
     title: "Deluxe Room",
-    category: "Classic Sophistication",
-    image: "/new/DSC04040.jpg",
+    images: ["/new/DSC04040.jpg", "/new/DSC04050.jpg", "/new/DSC04076.jpg"],
     slug: "deluxe-room",
     size: "250 sq.ft.",
-    price: "Rs. 8,000",
-    guests: "Twin / King",
-    description:
-      "The Deluxe rooms offer 250 sq.ft. of well-appointed space for the always-on-the-move traveller with a Twin / King size bed, uninterrupted hi-speed Wifi, a laptop-compatible safe, Tea / Coffee maker, smart key card locks and Direct Dial facility.",
+    price: 8000,
+    bed: "Twin / King Bed",
+    tag: "Most Popular",
+    tagColor: "bg-gold text-black",
+    description: "Well-appointed comfort for the always-on-the-move traveller.",
+    amenities: ["Hi-Speed WiFi", "Tea / Coffee Maker", "Laptop Safe", "Smart Key Card"],
   },
   {
     title: "Executive Room",
-    category: "Business Elegance",
-    image: "/new/DSC05908.jpg",
+    images: ["/new/DSC05908.jpg", "/new/DSC05913.jpg", "/new/DSC05919.jpg"],
     slug: "executive-room",
-    size: "Stunning Views",
-    price: "Rs. 9,000",
-    guests: "King",
-    description:
-      "Executive room is ideal for both business and leisure travelers, functional yet luxurious, with the most stunning view of the beach — making every stay both productive and deeply satisfying.",
+    size: "Stunning View",
+    price: 9000,
+    bed: "King Bed",
+    tag: "Business Favourite",
+    tagColor: "bg-white/15 text-white",
+    description: "Ideal for business & leisure. Stunning views, functional luxury.",
+    amenities: ["Hi-Speed WiFi", "Tea / Coffee Maker", "Laptop Safe", "Smart Key Card"],
   },
   {
     title: "Amor Suite",
-    category: "Romance & Art",
-    image: "/new/DSC05986.jpg",
+    images: ["/new/DSC05986.jpg", "/new/DSC05983.jpg", "/new/DSC05980.jpg"],
     slug: "amor-suite",
     size: "550 sq.ft.",
-    price: "Rs. 11,000",
-    guests: "King",
-    description:
-      "Indulge in 550 sq.ft. of personal space that pampers you. Unwind on the massaging chair with a King size bed, uninterrupted hi-speed Wifi, laptop compatible safe, in-room Tea / Coffee maker, and smart key.",
+    price: 11000,
+    bed: "King Bed",
+    tag: "Romantic Getaway",
+    tagColor: "bg-rose-500/20 text-rose-300",
+    description: "Unwind on a massaging chair. Spacious, romantic, utterly indulgent.",
+    amenities: ["Massaging Chair", "Hi-Speed WiFi", "Tea / Coffee Maker", "Smart Key Card"],
   },
   {
     title: "Platinum Suite",
-    category: "Modern / Elite",
-    image: "/new/DSC05961.jpg",
+    images: ["/rooms-platinum.png", "/new/DSC05961.jpg", "/new/DSC05957.jpg"],
     slug: "platinum-suite",
     size: "700 sq.ft.",
-    price: "Rs. 12,000",
-    guests: "King",
-    description:
-      "A perfect setting for the jet-set elite. Experience 700 sq.ft. of bespoke luxury that spools and revives the energies within for that important meeting the next day.",
+    price: 12000,
+    bed: "King Bed",
+    tag: "Premium",
+    tagColor: "bg-slate-300/20 text-slate-200",
+    description: "Bespoke luxury for the jet-set elite. Revive before your next big meeting.",
+    amenities: ["Living Area", "Hi-Speed WiFi", "Mini Bar", "Smart Key Card"],
   },
   {
     title: "Presidential Suite",
-    category: "Iconic Opulence",
-    image: "/new/DSC05993.jpg",
+    images: ["/rooms-presidential.png", "/new/DSC05993.jpg", "/new/DSC05998.jpg"],
     slug: "presidential-suite",
     size: "900 sq.ft.",
-    price: "Rs. 15,000",
-    guests: "King",
-    description:
-      "The ultimate abode for the travelling king. Experience 900 sq.ft. of opulence, equipped with an in-room bar counter and a mini bar — fully stocked with the finest spirits from across the world.",
+    price: 15000,
+    bed: "King Bed",
+    tag: "Finest Suite",
+    tagColor: "bg-gold/20 text-gold",
+    description: "The ultimate address. In-room bar, fully stocked mini bar, pure opulence.",
+    amenities: ["In-Room Bar", "Mini Bar", "Living Room", "Smart Key Card"],
   },
 ];
 
-export function HorizontalRooms() {
-  const [active, setActive] = useState(0);
-  const room = ROOMS[active];
+function RoomImageSlider({ images, title }: { images: string[]; title: string }) {
+  const [current, setCurrent] = useState(0);
+
+  const prev = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
+  };
+  const next = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+  };
 
   return (
-    <section className="bg-[#0A0A0A]" id="suites">
-
-      {/* Section header */}
-      <div className="px-6 md:px-16 pt-14 md:pt-20 pb-8 md:pb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-3">
-        <div>
-          <p className="text-[9px] uppercase tracking-[0.8em] font-black text-gold mb-2 italic">The Collection</p>
-          <h2 className="text-2xl md:text-4xl font-serif text-white tracking-tighter leading-tight">
-            Our <span className="text-gold font-light italic">Residencies</span>
-          </h2>
+    <div className="relative w-full h-56 overflow-hidden group/slider flex-shrink-0">
+      {images.map((src, i) => (
+        <div key={i} className={`absolute inset-0 transition-opacity duration-500 ${i === current ? "opacity-100" : "opacity-0"}`}>
+          <Image src={src} alt={`${title} ${i + 1}`} fill sizes="400px" className="object-cover" priority={i === 0} />
         </div>
-        <Link
-          href="/rooms"
-          className="hidden md:flex items-center gap-2 text-[9px] uppercase tracking-[0.4em] font-black text-white/30 hover:text-gold transition-colors duration-500 group"
-        >
-          View all rooms
-          <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-        </Link>
-      </div>
-
-      {/* ── DESKTOP: Featured + List ── */}
-      <div className="hidden md:grid md:grid-cols-[1fr_360px] gap-0 px-16 pb-20 h-[80vh]">
-
-        {/* Featured image panel */}
-        <div className="relative rounded-[32px] overflow-hidden bg-black">
-          {ROOMS.map((r, i) => (
-            <div
-              key={i}
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${i === active ? "opacity-100" : "opacity-0"}`}
-            >
-              <Image
-                src={r.image}
-                alt={r.title}
-                fill
-                sizes="65vw"
-                className="object-cover"
-                priority={i === 0}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-            </div>
-          ))}
-
-          {/* Bottom overlay info */}
-          <div className="absolute bottom-0 left-0 right-0 p-10 z-10">
-            <p className="text-[9px] uppercase tracking-[0.6em] font-black text-gold mb-2 italic transition-all duration-500">
-              {room.category}
-            </p>
-            <h3 className="text-4xl md:text-5xl font-serif text-white italic tracking-tighter mb-3 transition-all duration-500">
-              {room.title}
-            </h3>
-            <p className="text-sm font-serif text-white/50 italic mb-6 max-w-lg leading-relaxed transition-all duration-500">
-              {room.description}
-            </p>
-
-            {/* Stats row */}
-            <div className="flex items-center gap-8 mb-8">
-              <div className="flex items-center gap-2">
-                <BedDouble className="w-3.5 h-3.5 text-gold" />
-                <span className="text-[9px] uppercase tracking-[0.3em] font-black text-white/50">{room.size}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-3.5 h-3.5 text-gold" />
-                <span className="text-[9px] uppercase tracking-[0.3em] font-black text-white/50">{room.guests}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[9px] uppercase tracking-[0.3em] font-black text-gold">{room.price}</span>
-                <span className="text-[9px] uppercase tracking-[0.2em] font-black text-white/30">/ night</span>
-              </div>
-            </div>
-
-            {/* CTAs */}
-            <div className="flex items-center gap-4">
-              <a
-                href="https://bookings.peninsulagrand.com/?propertyId=8984"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gold text-black px-8 py-3.5 rounded-full font-black text-[9px] uppercase tracking-[0.3em] hover:bg-white transition-all duration-500"
-              >
-                Reserve Now
-              </a>
-              <Link
-                href={`/rooms/${room.slug}`}
-                className="border border-white/20 text-white px-8 py-3.5 rounded-full font-black text-[9px] uppercase tracking-[0.3em] hover:bg-white/10 transition-all duration-500"
-              >
-                View Details
-              </Link>
-            </div>
+      ))}
+      {images.length > 1 && (
+        <>
+          <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/60 flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-opacity">
+            <ChevronLeft className="w-4 h-4 text-white" />
+          </button>
+          <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/60 flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-opacity">
+            <ChevronRight className="w-4 h-4 text-white" />
+          </button>
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+            {images.map((_, i) => (
+              <button key={i} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrent(i); }}
+                className={`rounded-full transition-all duration-300 ${i === current ? "w-4 h-1.5 bg-gold" : "w-1.5 h-1.5 bg-white/50"}`} />
+            ))}
           </div>
-        </div>
+        </>
+      )}
+    </div>
+  );
+}
 
-        {/* Room list panel */}
-        <div className="flex flex-col justify-center pl-8 gap-1">
-          {ROOMS.map((r, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`group text-left px-6 py-5 rounded-2xl transition-all duration-400 border ${
-                i === active
-                  ? "bg-white/5 border-white/10"
-                  : "border-transparent hover:bg-white/[0.03] hover:border-white/5"
-              }`}
-            >
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <span
-                    className={`text-[8px] uppercase tracking-[0.5em] font-black block mb-1 transition-colors duration-300 ${
-                      i === active ? "text-gold" : "text-white/20 group-hover:text-white/35"
-                    }`}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h4
-                    className={`text-base font-serif italic tracking-tight transition-colors duration-300 ${
-                      i === active ? "text-white" : "text-white/40 group-hover:text-white/70"
-                    }`}
-                  >
-                    {r.title}
-                  </h4>
-                  <div className="flex items-center gap-3 mt-1">
-                    <span
-                      className={`text-[8px] uppercase tracking-[0.2em] font-black transition-colors duration-300 ${
-                        i === active ? "text-gold" : "text-white/15"
-                      }`}
-                    >
-                      {r.price}
-                    </span>
-                    {i === active && (
-                      <span className="text-[7px] uppercase tracking-[0.2em] font-black text-white/25">/ night</span>
-                    )}
-                  </div>
-                </div>
-                <ArrowUpRight
-                  className={`w-4 h-4 mt-1 transition-all duration-300 flex-shrink-0 ${
-                    i === active ? "text-gold opacity-100" : "text-white/20 opacity-0 group-hover:opacity-100"
-                  }`}
-                />
-              </div>
-              {i === active && <div className="mt-3 w-8 h-px bg-gold" />}
-            </button>
-          ))}
+export function HorizontalRooms() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
 
-          <div className="px-6 mt-4">
-            <Link
-              href="/rooms"
-              className="flex items-center justify-between w-full py-4 border-t border-white/10 group"
-            >
-              <span className="text-[8px] uppercase tracking-[0.4em] font-black text-white/30 group-hover:text-gold transition-colors duration-500">
-                Explore all rooms
-              </span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-gold" />
-            </Link>
+  const onMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    startX.current = e.pageX - (sliderRef.current?.offsetLeft || 0);
+    scrollLeft.current = sliderRef.current?.scrollLeft || 0;
+    if (sliderRef.current) sliderRef.current.style.cursor = "grabbing";
+  };
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current || !sliderRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - sliderRef.current.offsetLeft;
+    sliderRef.current.scrollLeft = scrollLeft.current - (x - startX.current);
+  };
+  const onMouseUp = () => {
+    isDragging.current = false;
+    if (sliderRef.current) sliderRef.current.style.cursor = "grab";
+  };
+
+  return (
+    <section className="bg-foreground py-14 md:py-20" id="suites">
+
+      {/* Header */}
+      <div className="px-6 md:px-16 mb-8 md:mb-12">
+        <p className="text-[9px] uppercase tracking-[0.8em] font-black text-gold mb-3 italic">Choose Your Stay</p>
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <h2 className="text-2xl md:text-4xl font-serif text-white tracking-tighter leading-tight mb-1">
+              Find Your Perfect <span className="text-gold italic font-light">Room</span>
+            </h2>
+            <p className="text-sm text-white/40 italic">Drag to explore all rooms · Tap to book</p>
           </div>
+          <a href="tel:+912267347777" className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-2xl px-4 py-3 hover:bg-white/10 transition-all duration-300 w-fit">
+            <div className="w-7 h-7 rounded-full bg-gold flex items-center justify-center flex-shrink-0">
+              <Phone className="w-3 h-3 text-black" />
+            </div>
+            <div>
+              <p className="text-[8px] uppercase tracking-[0.3em] font-black text-white/40">Call to Book</p>
+              <p className="text-sm font-bold text-white">+91 22 6734 7777</p>
+            </div>
+          </a>
         </div>
       </div>
 
-      {/* ── MOBILE: Vertical card stack ── */}
-      <div className="md:hidden px-6 flex flex-col gap-5 pb-12">
-        {ROOMS.map((r, i) => (
-          <Link
-            href={`/rooms/${r.slug}`}
+      {/* Drag Slider */}
+      <div
+        ref={sliderRef}
+        className="flex gap-5 overflow-x-auto px-6 md:px-16 pb-4 scrollbar-hide cursor-grab select-none"
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
+      >
+        {ROOMS.map((room, i) => (
+          <div
             key={i}
-            className="block relative w-full rounded-[20px] overflow-hidden bg-black"
+            className="flex-shrink-0 w-[80vw] sm:w-[340px] md:w-[360px] bg-white/5 rounded-[20px] overflow-hidden border border-white/10 hover:border-gold/30 transition-all duration-500 flex flex-col"
           >
-            {/* Image */}
-            <div className="relative w-full h-[55vw]">
-              <Image
-                src={r.image}
-                alt={r.title}
-                fill
-                sizes="90vw"
-                className="object-cover opacity-80"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-            </div>
-
-            {/* Info below image */}
-            <div className="p-5 pt-0 -mt-10 relative z-10">
-              <span className="text-[8px] uppercase tracking-[0.5em] font-black text-gold block mb-1.5">
-                {r.category}
-              </span>
-              <h3 className="text-xl font-serif text-white italic tracking-tight leading-tight mb-2">
-                {r.title}
-              </h3>
-              <p className="text-xs font-serif text-white/40 italic leading-relaxed mb-4 line-clamp-2">
-                {r.description}
-              </p>
-              <div className="flex items-center justify-between">
-                <div>
-                  <span className="text-sm font-serif font-black text-gold">{r.price}</span>
-                  <span className="text-[8px] uppercase tracking-[0.2em] font-black text-white/25 ml-1">/ night</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-[8px] uppercase tracking-[0.2em] font-black text-white/30">{r.size}</span>
-                  <div className="w-7 h-7 rounded-full bg-gold flex items-center justify-center">
-                    <ArrowUpRight className="w-3 h-3 text-black" />
-                  </div>
-                </div>
+            {/* Image slider */}
+            <div className="relative">
+              <RoomImageSlider images={room.images} title={room.title} />
+              <div className="absolute top-3 left-3 z-10">
+                <span className={`${room.tagColor} text-[8px] uppercase tracking-[0.3em] font-black px-3 py-1.5 rounded-full`}>
+                  {room.tag}
+                </span>
+              </div>
+              <div className="absolute top-3 right-3 z-10 bg-black/70 rounded-xl px-3 py-1.5 text-right">
+                <p className="text-[7px] text-white/50 font-bold uppercase">From</p>
+                <p className="text-base font-black text-gold leading-none">₹{room.price.toLocaleString("en-IN")}</p>
+                <p className="text-[7px] text-white/40 font-bold uppercase">/ night</p>
               </div>
             </div>
-          </Link>
+
+            {/* Card info */}
+            <div className="p-5 flex flex-col flex-1">
+              <h3 className="text-lg font-serif text-white italic tracking-tight mb-1">{room.title}</h3>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-xs font-semibold text-white/40">{room.bed}</span>
+                <span className="text-white/20">·</span>
+                <span className="text-xs font-semibold text-white/40">{room.size}</span>
+              </div>
+              <p className="text-xs text-white/50 italic leading-relaxed mb-4">{room.description}</p>
+
+              <div className="grid grid-cols-2 gap-1.5 mb-5">
+                {room.amenities.map((a, j) => (
+                  <div key={j} className="flex items-center gap-1.5">
+                    <div className="w-1 h-1 rounded-full bg-gold flex-shrink-0" />
+                    <span className="text-[10px] font-semibold text-white/35">{a}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="h-px bg-white/5 mb-4 mt-auto" />
+
+              {/* Buttons — one row */}
+              <div className="flex gap-2">
+                <a
+                  href="https://bookings.peninsulagrand.com/?propertyId=8984"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-gold text-black py-3 rounded-xl font-black text-xs uppercase tracking-wide text-center hover:bg-white transition-all duration-400 active:scale-95 flex items-center justify-center gap-1"
+                >
+                  Book Now
+                  <ArrowRight className="w-3 h-3" />
+                </a>
+                <Link
+                  href={`/rooms/${room.slug}`}
+                  className="flex-1 border border-white/20 text-white py-3 rounded-xl font-bold text-xs uppercase tracking-wide text-center hover:border-gold hover:text-gold transition-all duration-400"
+                >
+                  View Details
+                </Link>
+              </div>
+            </div>
+          </div>
         ))}
 
-        {/* View all */}
-        <Link
-          href="/rooms"
-          className="flex items-center justify-center gap-3 py-5 border border-white/10 rounded-2xl hover:border-gold/30 transition-all duration-500 group"
-        >
-          <span className="text-[9px] uppercase tracking-[0.4em] font-black text-white/30 group-hover:text-gold transition-colors duration-500">
-            View All Rooms
-          </span>
-          <ArrowUpRight className="w-3.5 h-3.5 text-gold" />
-        </Link>
+        {/* Trailing space */}
+        <div className="flex-shrink-0 w-2 md:w-10" />
+      </div>
+
+      {/* Drag hint */}
+      <div className="flex items-center justify-center gap-3 mt-6 opacity-40">
+        <ChevronLeft className="w-3.5 h-3.5 text-white" />
+        <span className="text-[9px] uppercase tracking-[0.5em] font-black text-white">Drag to explore</span>
+        <ChevronRight className="w-3.5 h-3.5 text-white" />
       </div>
     </section>
   );
