@@ -27,7 +27,7 @@ export function HorizontalRooms() {
 
     mm.add("(min-width: 768px)", () => {
       const ctx = gsap.context(() => {
-        const pin = gsap.fromTo(
+        gsap.fromTo(
           triggerRef.current,
           { x: 0 },
           {
@@ -43,11 +43,13 @@ export function HorizontalRooms() {
             },
           }
         );
-        return () => {
-          pin.kill();
-          ctx.revert();
-        };
       }, sectionRef);
+
+      // Cleanup returned to mm.add — NOT inside gsap.context callback
+      return () => {
+        ScrollTrigger.getAll().forEach((t) => t.kill());
+        ctx.revert();
+      };
     });
 
     return () => mm.revert();
