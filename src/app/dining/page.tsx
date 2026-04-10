@@ -24,7 +24,7 @@ export default function DiningPage() {
 
         <div className="max-w-4xl mx-auto relative z-10">
           <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-10 pl-1 italic">Private Gatherings</p>
-          <h2 className="text-4xl md:text-7xl font-serif text-background mb-16 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-serif text-background mb-16 leading-tight">
              Elevate your events with our <br/> <span className="italic text-gold">bespoke</span> culinary service.
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">

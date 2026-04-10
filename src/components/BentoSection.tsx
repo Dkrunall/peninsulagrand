@@ -55,7 +55,7 @@ export function BentoSection() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-8 md:gap-12">
           <div className="max-w-2xl">
             <p className="text-[10px] uppercase tracking-[0.5em] font-black text-gold mb-4 md:mb-6 border-l-2 border-gold pl-4 ml-1">Elite Experience</p>
-            <h3 className="text-3xl md:text-7xl font-serif text-foreground leading-[1.1] md:leading-[1] tracking-tight">
+            <h3 className="text-2xl md:text-5xl font-serif text-foreground leading-[1.1] md:leading-[1] tracking-tight">
               Unparalleled comfort <br/> <span className="italic">reimagined.</span>
             </h3>
           </div>

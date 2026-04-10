@@ -42,7 +42,7 @@ export default function WeddingsPage() {
 
             <div className="order-1 lg:order-2">
                <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-10 italic">Sacred Spaces</p>
-               <h2 className="text-4xl md:text-7xl font-serif text-foreground mb-12 tracking-tighter leading-tight italic">
+               <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-12 tracking-tighter leading-tight italic">
                  An <span className="text-gold font-light">Odyssey</span> of love.
                </h2>
                <p className="text-xl text-foreground/60 font-serif leading-relaxed italic mb-12">

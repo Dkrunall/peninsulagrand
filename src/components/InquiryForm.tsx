@@ -14,7 +14,7 @@ export function InquiryForm() {
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-24">
            <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-4 md:mb-8 italic">The Digital Atrium</p>
-           <h2 className="text-3xl md:text-9xl font-serif text-background tracking-tighter leading-tight md:leading-none italic">
+           <h2 className="text-2xl md:text-6xl font-serif text-background tracking-tighter leading-tight md:leading-none italic">
              Leave a <span className="text-gold font-light">Message.</span>
            </h2>
         </div>

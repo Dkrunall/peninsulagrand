@@ -61,7 +61,7 @@ export function AboutPhilosophy() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16 md:mb-28">
            <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-4 md:mb-8 italic">The Three Pillars</p>
-           <h2 className="text-4xl md:text-9xl font-serif text-background tracking-tighter leading-tight md:leading-none">
+           <h2 className="text-3xl md:text-6xl font-serif text-background tracking-tighter leading-tight md:leading-none">
              Our <span className="italic">Soul.</span>
            </h2>
         </div>

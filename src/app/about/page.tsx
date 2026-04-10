@@ -22,7 +22,7 @@ export default function AboutPage() {
       {/* Legacy Call to Action */}
       <section className="py-40 bg-background text-center px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-serif text-foreground mb-12 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-12 leading-tight">
             Be part of our <span className="italic text-gold">continuing</span> story.
           </h2>
           <a 

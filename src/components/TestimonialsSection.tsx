@@ -78,7 +78,7 @@ export function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center">
         <div className="text-center mb-16 md:mb-24">
           <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-6 italic">Voices of Excellence</p>
-          <h2 className="text-3xl md:text-7xl font-serif text-background tracking-tighter italic">
+          <h2 className="text-2xl md:text-5xl font-serif text-background tracking-tighter italic">
             Our guests <span className="text-gold font-light">love us.</span>
           </h2>
         </div>

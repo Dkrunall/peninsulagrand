@@ -51,7 +51,7 @@ export function NearbyCommute() {
             transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
           >
             <p className="text-[10px] uppercase tracking-[0.6em] font-black text-gold mb-5 md:mb-8 italic">Prime Location</p>
-            <h2 className="text-3xl md:text-7xl font-serif text-foreground mb-6 md:mb-10 tracking-tighter leading-tight md:leading-none italic">
+            <h2 className="text-2xl md:text-5xl font-serif text-foreground mb-6 md:mb-10 tracking-tighter leading-tight md:leading-none italic">
               Everything<br/> <span className="text-gold font-light">at your doorstep.</span>
             </h2>
             <p className="text-base md:text-xl text-foreground/60 font-serif italic leading-relaxed mb-8 md:mb-12 md:max-w-md">
@@ -90,7 +90,7 @@ export function NearbyCommute() {
                     <p className="text-xs text-foreground/40 italic mt-0.5">{point.sub}</p>
                   </div>
                   <div className="text-right shrink-0">
-                    <span className="text-3xl md:text-5xl font-serif font-black text-foreground group-hover:text-gold transition-colors duration-700 leading-none">
+                    <span className="text-2xl md:text-4xl font-serif font-black text-foreground group-hover:text-gold transition-colors duration-700 leading-none">
                       {point.distance}
                     </span>
                     <span className="text-xs uppercase tracking-widest font-black text-foreground/40 ml-1">{point.unit}</span>

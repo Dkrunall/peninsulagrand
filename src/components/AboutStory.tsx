@@ -73,7 +73,7 @@ export function AboutStory() {
           </div>
           <div className="story-text w-full md:w-1/2">
             <p className="text-[10px] uppercase tracking-[0.5em] font-black text-gold mb-4 md:mb-6 italic">MCMXCIV — 1994</p>
-            <h3 className="text-3xl md:text-7xl font-serif text-foreground mb-6 md:mb-10 leading-tight md:leading-none tracking-tighter">
+            <h3 className="text-2xl md:text-5xl font-serif text-foreground mb-6 md:mb-10 leading-tight md:leading-none tracking-tighter">
               The Genesis of <br/> <span className="italic">Grace.</span>
             </h3>
             <p className="text-base md:text-xl text-foreground/60 font-serif leading-relaxed italic md:pr-12">
@@ -96,7 +96,7 @@ export function AboutStory() {
           </div>
           <div className="story-text w-full md:w-1/2">
             <p className="text-[10px] uppercase tracking-[0.5em] font-black text-gold mb-4 md:mb-6 italic">The Philosophy</p>
-            <h3 className="text-3xl md:text-7xl font-serif text-foreground mb-6 md:mb-10 leading-tight md:leading-none tracking-tighter">
+            <h3 className="text-2xl md:text-5xl font-serif text-foreground mb-6 md:mb-10 leading-tight md:leading-none tracking-tighter">
                Human <br/> <span className="italic">Touch.</span>
             </h3>
             <p className="text-base md:text-xl text-foreground/60 font-serif leading-relaxed italic md:pl-12">
@@ -119,7 +119,7 @@ export function AboutStory() {
           </div>
           <div className="story-text w-full md:w-1/2">
             <p className="text-[10px] uppercase tracking-[0.5em] font-black text-gold mb-4 md:mb-6 italic">MMXXVI — 2026</p>
-            <h3 className="text-3xl md:text-7xl font-serif text-foreground mb-6 md:mb-10 leading-tight md:leading-none tracking-tighter">
+            <h3 className="text-2xl md:text-5xl font-serif text-foreground mb-6 md:mb-10 leading-tight md:leading-none tracking-tighter">
               Bespoke <br/> <span className="italic">Futures.</span>
             </h3>
             <p className="text-base md:text-xl text-foreground/60 font-serif leading-relaxed italic md:pr-12">

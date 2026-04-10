@@ -155,7 +155,7 @@ export function HorizontalRooms() {
               <span className="text-gold uppercase tracking-[0.6em] text-[10px] font-black mb-8 block opacity-0 translate-y-12 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-1000 ease-expo">
                 {room.category}
               </span>
-              <h2 className="text-[12vw] font-serif tracking-tighter text-background leading-none select-none group-hover:text-glow transition-all duration-1000">
+              <h2 className="text-[8vw] font-serif tracking-tighter text-background leading-none select-none group-hover:text-glow transition-all duration-1000">
                 {room.title.split(" ").map((word, i) => (
                   <span key={i} className="inline-block mr-6 italic group-hover:not-italic transition-all duration-700">
                     {word}

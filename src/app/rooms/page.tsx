@@ -19,7 +19,7 @@ export default function RoomsPage() {
       <section className="py-40 bg-background text-center px-6">
         <div className="max-w-4xl mx-auto">
           <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-8 italic pl-1">The Experience</p>
-          <h2 className="text-4xl md:text-7xl font-serif text-foreground mb-16 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-16 leading-tight">
              Your <span className="italic text-gold">sanctuary</span> in the <br/> heart of Mumbai.
           </h2>
           <a 

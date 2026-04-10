@@ -10,7 +10,7 @@ export function ContactGrid() {
         {/* Left Side: Directory */}
         <div className="flex flex-col justify-center">
           <p className="text-[10px] uppercase tracking-[0.6em] font-black text-gold mb-5 md:mb-8 italic">The Address</p>
-          <h2 className="text-3xl md:text-7xl font-serif text-foreground mb-8 md:mb-12 tracking-tighter leading-tight md:leading-none italic">
+          <h2 className="text-2xl md:text-5xl font-serif text-foreground mb-8 md:mb-12 tracking-tighter leading-tight md:leading-none italic">
             Sakinaka <span className="text-gold font-light">Junction.</span>
           </h2>
           

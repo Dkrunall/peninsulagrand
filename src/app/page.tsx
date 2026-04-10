@@ -55,7 +55,7 @@ export default function Home() {
       <section className="py-24 px-6 md:px-12 bg-background flex flex-col items-center justify-center text-center">
         <div className="max-w-4xl">
           <h2 className="text-sm uppercase tracking-widest font-bold text-gold mb-8 italic">The Finest Luxury Hotel</h2>
-          <h3 className="text-3xl md:text-7xl font-serif text-foreground leading-[1.2] md:leading-[1.1] mb-6">
+          <h3 className="text-2xl md:text-5xl font-serif text-foreground leading-[1.2] md:leading-[1.1] mb-6">
             An oasis of isolation in the heart of <span className="italic">Mumbai.</span>
           </h3>
           <p className="text-base md:text-xl text-foreground/60 font-serif italic leading-relaxed max-w-2xl mx-auto mb-12">

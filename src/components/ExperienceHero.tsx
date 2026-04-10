@@ -52,7 +52,7 @@ export function ExperienceHero({ title, subtitle, highlight, image, tagline }: E
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
         <div className="hero-content">
           <p className="text-[10px] uppercase tracking-[1em] font-black text-gold mb-4 md:mb-12 italic pl-2">{tagline}</p>
-          <h1 className="text-3xl md:text-[6.5vw] font-serif text-background leading-[1.1] md:leading-[0.9] tracking-tighter mb-8 md:mb-16 italic text-center uppercase">
+          <h1 className="text-2xl md:text-[5vw] font-serif text-background leading-[1.1] md:leading-[0.9] tracking-tighter mb-8 md:mb-16 italic text-center uppercase">
             {title} <br className="hidden md:block" /> <span className="text-gold font-light">{highlight}</span> {subtitle}
           </h1>
 

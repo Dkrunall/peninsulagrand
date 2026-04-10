@@ -83,7 +83,7 @@ export function RoomShowcase() {
             {/* Content Section */}
             <div className="room-content w-full md:w-2/5 p-2 md:p-4">
               <p className="text-[10px] uppercase tracking-[0.5em] font-black text-gold mb-4 md:mb-6 italic">{room.type}</p>
-              <h2 className="text-3xl md:text-6xl font-serif text-foreground mb-6 md:mb-8 tracking-tighter leading-tight italic">
+              <h2 className="text-2xl md:text-4xl font-serif text-foreground mb-6 md:mb-8 tracking-tighter leading-tight italic">
                  {room.name}
               </h2>
               <p className="text-base md:text-lg text-foreground/60 font-serif leading-relaxed italic mb-8 md:mb-10">

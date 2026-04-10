@@ -89,8 +89,8 @@ export function KineticHero() {
   const title = "PENINSULA GRAND";
 
   return (
-    <section 
-      ref={heroRef} 
+    <section
+      ref={heroRef}
       className="relative min-h-[115vh] flex flex-col items-center justify-center bg-background overflow-hidden pt-20"
     >
       {/* Refined Background Blobs */}
@@ -99,13 +99,13 @@ export function KineticHero() {
 
       {/* Main Kinetic Typography */}
       <div className="w-full relative h-[20vh] flex items-center justify-center overflow-visible pointer-events-none">
-        <h1 
+        <h1
           ref={titleRef}
-          className="text-4xl sm:text-6xl lg:text-[9.5vw] font-serif leading-none tracking-tight md:tracking-normal select-none perspective-1000 flex flex-row flex-nowrap w-max"
+          className="text-2xl sm:text-4xl lg:text-[5.5vw] font-serif leading-none tracking-tight md:tracking-normal select-none perspective-1000 flex flex-row flex-nowrap w-max"
         >
           {title.split("").map((char, i) => (
-            <span 
-              key={i} 
+            <span
+              key={i}
               className="char inline-block origin-bottom hover:text-gold text-glow shrink-0 pointer-events-auto"
             >
               {char === " " ? "\u00A0" : char}
@@ -115,7 +115,7 @@ export function KineticHero() {
       </div>
 
       {/* Description Overlay - Polished Hierarchy */}
-      <div 
+      <div
         ref={subtitleRef}
         className="mt-8 md:mt-0 md:absolute md:bottom-24 md:right-32 max-w-sm text-center md:text-right z-10 px-6"
       >
@@ -126,11 +126,11 @@ export function KineticHero() {
       </div>
 
       {/* Interactive Glass Reveal - Polished */}
-      <div 
-        className="glass-hero glass mt-20 w-full max-w-6xl aspect-[21/9] rounded-bento shadow-2xl overflow-hidden flex items-center justify-center group cursor-pointer relative" 
+      <div
+        className="glass-hero glass mt-20 w-full max-w-6xl aspect-[21/9] rounded-bento shadow-2xl overflow-hidden flex items-center justify-center group cursor-pointer relative"
         data-cursor="pointer"
       >
-        <Image 
+        <Image
           src="/new/DSC03915.jpg"
           alt="Luxury Lobby"
           fill
@@ -138,14 +138,14 @@ export function KineticHero() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60"></div>
         <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-1000"></div>
-        
+
         <div className="z-10 flex flex-col items-center gap-6">
           <span className="text-xs uppercase tracking-[0.3em] font-black opacity-30 group-hover:opacity-100 transition-all duration-1000 group-hover:translate-y-0 translate-y-2 text-white">
             The Sanctuary Experience
           </span>
           <div className="w-16 h-[1.5px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
         </div>
-        
+
         {/* Subtle internal border for depth */}
         <div className="absolute inset-4 border border-white/5 rounded-[24px] pointer-events-none"></div>
       </div>

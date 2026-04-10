@@ -49,7 +49,7 @@ export function RoomsHero() {
 
       <div className="relative z-10 text-center px-6">
         <p className="rooms-sub text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-3 md:mb-10 pl-1">The Collection</p>
-        <h1 className="text-2xl sm:text-4xl lg:text-[9vw] font-serif text-background tracking-tighter leading-tight lg:leading-none perspective-1000 flex flex-nowrap justify-center">
+        <h1 className="text-2xl sm:text-4xl lg:text-[6.5vw] font-serif text-background tracking-tighter leading-tight lg:leading-none perspective-1000 flex flex-nowrap justify-center">
           {title.split("").map((char, i) => (
             <span key={i} className="char inline-block origin-bottom text-glow-white">
               {char === " " ? "\u00A0" : char}

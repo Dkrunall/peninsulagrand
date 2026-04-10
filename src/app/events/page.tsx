@@ -31,7 +31,7 @@ export default function EventsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
             <div>
                <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-10 italic">Venue Portfolio</p>
-               <h2 className="text-4xl md:text-7xl font-serif text-foreground mb-12 tracking-tighter leading-tight italic">
+               <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-12 tracking-tighter leading-tight italic">
                  Where <span className="text-gold font-light">Ambition</span> meets its match.
                </h2>
                <p className="text-xl text-foreground/60 font-serif leading-relaxed italic mb-12 pr-10">

@@ -11,7 +11,7 @@ export function RoomAmenities({ room }: { room: Room }) {
         {/* Narrative Side */}
         <div>
           <p className="text-[10px] uppercase tracking-[0.6em] font-black text-gold mb-10 italic pl-1">The Sanctuary</p>
-          <h2 className="text-3xl md:text-6xl font-serif text-foreground mb-8 md:mb-12 tracking-tighter leading-tight italic">
+          <h2 className="text-2xl md:text-4xl font-serif text-foreground mb-8 md:mb-12 tracking-tighter leading-tight italic">
             Architectural <span className="text-gold font-light">Serenity.</span>
           </h2>
           <p className="text-lg md:text-2xl text-foreground/70 font-serif leading-relaxed italic mb-12">

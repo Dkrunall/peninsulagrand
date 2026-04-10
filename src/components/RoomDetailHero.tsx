@@ -46,7 +46,7 @@ export function RoomDetailHero({ room }: { room: Room }) {
       <div className="relative z-10 text-center px-6">
         <div className="hero-text">
           <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-3 md:mb-8 italic">Residency Detail</p>
-          <h1 className="text-4xl md:text-[10vw] font-serif text-background tracking-tighter leading-[1.1] md:leading-none italic mb-6 md:mb-12 uppercase">
+          <h1 className="text-2xl md:text-[5.5vw] font-serif text-background tracking-tighter leading-[1.1] md:leading-none italic mb-6 md:mb-12 uppercase">
             {room.name.split(" ").map((word, i) => (
               <span key={i} className={i % 2 === 0 ? "" : "text-gold font-light"}>{word} </span>
             ))}

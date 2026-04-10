@@ -108,7 +108,7 @@ export function DiningSection() {
           <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-5 md:mb-8 pl-1">Signature Experiences</p>
           <h2 
             ref={titleRef}
-            className="text-4xl md:text-9xl font-serif text-foreground tracking-tighter leading-[1] md:leading-[0.9]"
+            className="text-3xl md:text-6xl font-serif text-foreground tracking-tighter leading-[1] md:leading-[0.9]"
           >
             Culinary <span className="italic text-gold block md:inline">Alchemy.</span>
           </h2>

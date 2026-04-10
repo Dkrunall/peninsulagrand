@@ -130,7 +130,7 @@ export function DiningOutletShowcase() {
                 <span className="text-[10px] uppercase tracking-[0.5em] font-black text-gold italic">{outlet.type}</span>
               </div>
 
-              <h2 className="text-2xl md:text-7xl font-serif text-foreground mb-6 md:mb-10 tracking-tighter leading-tight italic uppercase">
+              <h2 className="text-2xl md:text-5xl font-serif text-foreground mb-6 md:mb-10 tracking-tighter leading-tight italic uppercase">
                 {outlet.name.split(" ").map((word, idx) => (
                     <span key={idx} className={idx % 2 === 0 ? "" : "text-gold font-light"}>{word} </span>
                 ))}

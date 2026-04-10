@@ -58,7 +58,7 @@ export function CinematicGallery({ title, subtitle, images }: CinematicGalleryPr
         {/* Header */}
         <div className="mb-12 md:mb-24 flex flex-col items-center text-center">
             <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-4 md:mb-8 italic">{subtitle}</p>
-            <h2 className="text-3xl md:text-7xl font-serif text-foreground leading-tight italic">
+            <h2 className="text-2xl md:text-5xl font-serif text-foreground leading-tight italic">
                {title.split(" ").map((word, i) => (
                   <span key={i} className={i % 2 === 1 ? "text-gold font-light" : ""}>{word} </span>
                ))}

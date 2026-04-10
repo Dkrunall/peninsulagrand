@@ -15,7 +15,7 @@ export function RoomBookingCTA({ room }: { room: Room }) {
 
       <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
         <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-10 italic pl-1">Final Discovery</p>
-        <h2 className="text-3xl md:text-8xl font-serif text-background mb-12 md:mb-16 tracking-tighter leading-tight italic">
+        <h2 className="text-2xl md:text-5xl font-serif text-background mb-12 md:mb-16 tracking-tighter leading-tight italic">
            Experience the <span className="text-gold font-light">Elegance</span> of {room.name}.
         </h2>
         

@@ -39,7 +39,7 @@ export function AboutHero() {
     <section ref={containerRef} className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-foreground">
       {/* Background Cinematic Image */}
       <div className="hero-bg absolute inset-0 z-0">
-        <Image 
+        <Image
           src="/new/DSC03979.jpg"
           alt="Peninsula Grand Heritage"
           fill
@@ -52,7 +52,7 @@ export function AboutHero() {
       <div className="relative z-10 text-center px-6">
         <p className="subtitle text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-3 md:mb-8 pl-1">Since 1994</p>
         <h1
-          className="text-4xl sm:text-6xl lg:text-[12vw] font-serif text-background tracking-tighter leading-tight lg:leading-none perspective-1000 flex flex-nowrap justify-center"
+          className="text-2xl sm:text-4xl lg:text-[6.5vw] font-serif text-background tracking-tighter leading-tight lg:leading-none perspective-1000 flex flex-nowrap justify-center"
         >
           {title.split("").map((char, i) => (
             <span key={i} className="char inline-block origin-bottom text-glow-white">
@@ -61,9 +61,9 @@ export function AboutHero() {
           ))}
         </h1>
         <div className="subtitle max-w-2xl mx-auto mt-6 md:mt-12">
-            <p className="text-lg md:text-2xl font-serif text-background/70 italic leading-relaxed">
-                "Where Mumbai's history meets the pinnacle of modern luxury."
-            </p>
+          <p className="text-lg md:text-2xl font-serif text-background/70 italic leading-relaxed">
+            "Where Mumbai's history meets the pinnacle of modern luxury."
+          </p>
         </div>
       </div>
 

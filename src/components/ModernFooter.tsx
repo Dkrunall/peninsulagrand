@@ -23,7 +23,7 @@ export function ModernFooter() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-20 mb-14 md:mb-32">
           {/* Main Statement */}
           <div className="md:col-span-6">
-            <h2 className="text-3xl md:text-7xl font-serif text-background mb-8 md:mb-12 leading-tight md:leading-[1.05] tracking-tight">
+            <h2 className="text-2xl md:text-5xl font-serif text-background mb-8 md:mb-12 leading-tight md:leading-[1.05] tracking-tight">
               Crafting <br className="hidden md:block" /> the future of <br className="hidden md:block" /> <span className="text-gold italic">hospitality</span> in Mumbai.
             </h2>
             <div className="flex gap-4 md:gap-6">
