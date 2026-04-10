@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* HSL Tailored Palette for Softness */
+  --background: 40 18% 97%; /* #FDFCFB Pearl White */
+  --foreground: 22 15% 15%; /* #2C2621 Deep Bronze Slate */
+  --accent-sand: 10 10% 90%;
+  --accent-slate: 0 0% 48%;
+  --gold: 45 61% 53%; /* #D4AF37 */
+  
+  --glass-bg: hsla(40, 18%, 97%, 0.5);
+  --glass-border: hsla(22, 15%, 15%, 0.1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-sand: hsl(var(--accent-sand));
+  --color-slate: hsl(var(--accent-slate));
+  --color-gold: hsl(var(--gold));
+  
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  
+  --radius-pill: 9999px;
+  --radius-bento: 32px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans), sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
+
+  /* Remove default blue browser focus outline everywhere */
+  *:focus {
+    outline: none;
+  }
+
+  /* Replace with premium gold focus ring for keyboard accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--gold));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Override browser default blue text selection */
+  ::selection {
+    background: hsla(var(--gold), 0.3);
+    color: hsl(var(--foreground));
+  }
+
+  /* Remove tap highlight on mobile (the blue flash on tap) */
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid var(--glass-border);
+  }
+
+  /* Premium white glass hover — replaces browser blue hover */
+  .glass-hover {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .grain {
+    position: relative;
+  }
+  
+  .grain::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px hsla(var(--gold), 0.3);
+  }
+
+  .text-glow-white {
+    text-shadow: 0 2px 20px rgba(255,255,255,0.15);
+  }
+
+  /* Hide scrollbar cross-browser while keeping scroll functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
