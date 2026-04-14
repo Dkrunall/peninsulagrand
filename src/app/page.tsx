@@ -3,9 +3,8 @@
 import Image from "next/image";
 import { Phone, Mail } from "lucide-react";
 import { KineticHero } from "@/components/KineticHero";
-import { BentoSection } from "@/components/BentoSection";
 import { HorizontalRooms } from "@/components/HorizontalRooms";
-import { DiningSection } from "@/components/DiningSection";
+import { HomeDining } from "@/components/HomeDining";
 import { ModernFooter } from "@/components/ModernFooter";
 import { StatsSection } from "@/components/StatsSection";
 import { NearbyCommute } from "@/components/NearbyCommute";
@@ -57,19 +56,12 @@ export default function Home() {
       {/* Stats Counter Section */}
       <StatsSection />
 
-      {/* About / Amenities Bento */}
-      <section id="amenities">
-        <BentoSection />
-      </section>
+      {/* Culinary Experiences — where amenities used to be */}
+      <HomeDining />
 
       {/* Horizontal Scroll Showcase for Suites */}
       <section id="suites">
         <HorizontalRooms />
-      </section>
-
-      {/* Culinary Experiences */}
-      <section id="dining">
-        <DiningSection />
       </section>
 
       {/* Location / Commute Section */}
