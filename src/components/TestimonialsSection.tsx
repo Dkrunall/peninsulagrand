@@ -6,27 +6,27 @@ import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const TESTIMONIALS = [
   {
-    name: "Hanan Azad",
-    role: "Business Traveler",
+    name: "Rajesh Mehta",
+    role: "Business Traveller",
     text: "The buffet menu has a wide choice of assorted savouries. Though I was running late, Mr. Jagdish (The Restaurant Manager) was very helpful and courteous to keep the buffet running for us. Exceptional service.",
     rating: 5
   },
   {
-    name: "Annette Black",
+    name: "Priya Nair",
     role: "Leisure Guest",
-    text: "I had lunch buffet—it was a great time for me. The staff is very friendly, great service, and highly recommend. A true gem in Mumbai.",
+    text: "I had the lunch buffet — it was a wonderful experience. The staff is incredibly friendly, the rooms are immaculate, and the location near the airport is perfect. A true gem in Mumbai.",
     rating: 5
   },
   {
-    name: "Jacob Jones",
+    name: "Arjun Sharma",
     role: "Club Enthusiast",
-    text: "Excellent Hotel! This property also accommodates two impact-creating Clubs: Mitron and Opa. Even the buffet is amazing and finger-licking good. Best place for nightlife and stay.",
+    text: "Excellent hotel! The property houses Mitron and Opa — both fantastic. The buffet is amazing and finger-licking good. Best place in Andheri for nightlife and a comfortable stay.",
     rating: 5
   },
   {
-    name: "Peek Thakul",
+    name: "Kavya Iyer",
     role: "Corporate Client",
-    text: "We had our office party at this location. Good hangout, DJ music, awesome experience, and the food was incredible. I really like this place for group events.",
+    text: "We hosted our company event here — great ambiance, DJ music, and the food was absolutely incredible. Peninsula Grand is our go-to for every corporate gathering in Mumbai.",
     rating: 5
   }
 ];

@@ -145,13 +145,13 @@ export function HorizontalRooms() {
             </h2>
             <p className="text-sm text-white/40 italic">Drag to explore all rooms · Tap to book</p>
           </div>
-          <a href="tel:+912267347777" className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-2xl px-4 py-3 hover:bg-white/10 transition-all duration-300 w-fit">
+          <a href="tel:+912266249100" className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-2xl px-4 py-3 hover:bg-white/10 transition-all duration-300 w-fit">
             <div className="w-7 h-7 rounded-full bg-gold flex items-center justify-center flex-shrink-0">
               <Phone className="w-3 h-3 text-black" />
             </div>
             <div>
               <p className="text-[8px] uppercase tracking-[0.3em] font-black text-white/40">Call to Book</p>
-              <p className="text-sm font-bold text-white">+91 22 6734 7777</p>
+              <p className="text-sm font-bold text-white">+91 22 6624 9100</p>
             </div>
           </a>
         </div>

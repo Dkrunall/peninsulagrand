@@ -33,10 +33,10 @@ export function ContactGrid() {
               </div>
               <div>
                  <p className="text-base md:text-3xl font-serif text-foreground/70 leading-relaxed italic mb-2 md:mb-4">
-                  +91 22 2851 9191
+                  +91 22 6624 9100
                 </p>
                 <p className="text-base md:text-3xl font-serif text-foreground/70 leading-relaxed italic">
-                  +91 22 6624 9100
+                  +91 22 2851 9191
                 </p>
               </div>
             </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Phone, Mail } from "lucide-react";
 import { KineticHero } from "@/components/KineticHero";
 import { HorizontalRooms } from "@/components/HorizontalRooms";
+import { BanquetSection } from "@/components/BanquetSection";
 import { HomeDining } from "@/components/HomeDining";
 import { ModernFooter } from "@/components/ModernFooter";
 import { StatsSection } from "@/components/StatsSection";
@@ -16,12 +17,12 @@ export default function Home() {
 
       {/* Left — Phone pill */}
       <a
-        href="tel:+912267347777"
+        href="tel:+912266249100"
         className="fixed top-6 left-6 z-[200] flex items-center gap-2 bg-[#1a1a1a] border border-white/10 rounded-full px-4 py-2.5 group pointer-events-auto shadow-xl hover:border-gold/40 transition-all duration-300"
       >
         <Phone className="w-4 h-4 text-gold flex-shrink-0" />
         <span className="hidden sm:block text-sm font-bold text-white group-hover:text-gold transition-colors duration-300 whitespace-nowrap">
-          +91 22 6734 7777
+          +91 22 6624 9100
         </span>
       </a>
 
@@ -41,11 +42,11 @@ export default function Home() {
 
       {/* Right — Email pill */}
       <a
-        href="mailto:reservations@peninsulagrand.com"
+        href="mailto:reservations@peninsulagrand.co.in"
         className="fixed top-6 right-6 z-[200] flex items-center gap-2 bg-[#1a1a1a] border border-white/10 rounded-full px-4 py-2.5 group pointer-events-auto shadow-xl hover:border-gold/40 transition-all duration-300"
       >
         <span className="hidden sm:block text-sm font-bold text-white group-hover:text-gold transition-colors duration-300 whitespace-nowrap">
-          reservations@peninsulagrand.com
+          reservations@peninsulagrand.co.in
         </span>
         <Mail className="w-3.5 h-3.5 text-gold flex-shrink-0" />
       </a>
@@ -56,13 +57,16 @@ export default function Home() {
       {/* Stats Counter Section */}
       <StatsSection />
 
-      {/* Culinary Experiences — where amenities used to be */}
+      {/* Culinary Experiences */}
       <HomeDining />
 
       {/* Horizontal Scroll Showcase for Suites */}
       <section id="suites">
         <HorizontalRooms />
       </section>
+
+      {/* Banquet & Events */}
+      <BanquetSection />
 
       {/* Location / Commute Section */}
       <NearbyCommute />

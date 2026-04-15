@@ -83,9 +83,9 @@ export function KineticHero() {
         <div className="flex items-center justify-center md:justify-around flex-wrap gap-x-8 gap-y-2 px-6 py-4">
           {[
             "✓ Free High-Speed WiFi",
-            "✓ Free Parking",
+            "✓ Parking Available",
             "✓ Complimentary Breakfast",
-            "✓ 4 Restaurants On-Site",
+            "✓ 5 Restaurants On-Site",
             "✓ 24/7 Concierge",
           ].map((item, i) => (
             <span key={i} className="text-xs font-semibold text-white/70 whitespace-nowrap">
