@@ -4,51 +4,61 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Clock, Wine, Utensils, Coffee, Music } from "lucide-react";
+import { Clock, Wine, Utensils, Coffee, Music, Cake } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const DETAILED_OUTLETS = [
   {
-    name: "Opa! Bar & Café",
-    type: "Mediterranean Art & Nightlife",
+    name: "OPA!",
+    type: "Mediterranean Bar & Café",
     icon: Wine,
     timing: "5:00 pm to 3:00 am",
     desc: "One of the most sought-after restaurants in Mumbai, where exceptional culinary experiences meet the vibrant art of nightlife. Offering contemporary Mediterranean cuisine with a touch of elegance, Opa has been redefining fine dining in Mumbai since 2015.",
-    image: "/new/DSC05913.jpg",
+    image: "/opa1.jpg",
     detail: "Contemporary Mediterranean cuisine with award-winning cocktails.",
     reversed: false
   },
   {
-    name: "M.I.T.R.O.N Bar & Kitchen",
-    type: "Global & Local Cuisines",
+    name: "M.I.T.R.O.N",
+    type: "Bar & Kitchen · Global & Local Cuisines",
     icon: Music,
     timing: "2:00 pm to 1:30 am",
     desc: "Full-fledged menus across global and local cuisines, each crafted with the precision and passion of a speciality kitchen. From pan-Asian to Indian, Italian to continental — Mitron is more than a place to eat, it's a mood. A crowd favourite built for the people, by the people.",
-    image: "/new/DSC05707.jpg",
+    image: "/mitron1.webp",
     detail: "Where every meal comes with a side of good energy and great company.",
     reversed: true
   },
   {
-    name: "Cafe Crema",
-    type: "24×7 Artisanal Café Experience",
-    icon: Coffee,
-    timing: "Open 24 Hours",
-    desc: "A thoughtfully curated 24×7 café experience where comfort meets culinary craftsmanship. Known for its warm, inviting ambiance and versatile offerings — a haven for early risers and a sanctuary for late-night conversations. Blending classic favourites with indulgent brunch spreads.",
-    image: "/new/DSC04009.jpg",
-    detail: "Savour the moment and indulge in the art of good food, any time of the day.",
+    name: "Waikiki",
+    type: "Tropical Island Dining",
+    icon: Utensils,
+    timing: "6:00 pm to 3:00 am",
+    desc: "A tropical escape in the heart of Andheri East. Established in 2024 by Peninsula Hospitality Group, Waikiki brings the spirit of Hawaii to Mumbai. Blending Hawaiian and Polynesian flavours with Asian and Mediterranean influences for a truly unique dining experience.",
+    image: "/waikiki1.webp",
+    detail: "Sip, savour, and escape — where island vibes meet Mumbai's energy.",
     reversed: false
   },
   {
-    name: "Waikiki & The Nest",
-    type: "Tropical Island Dining & Rooftop Bar",
-    icon: Utensils,
+    name: "The Nest",
+    type: "Rooftop Bar",
+    icon: Wine,
     timing: "6:00 pm to 3:00 am",
-    desc: "A tropical escape in the heart of Andheri East. Established in 2024 by Peninsula Hospitality Group, Waikiki brings the spirit of Hawaii to Mumbai. Blending Hawaiian and Polynesian flavors with Asian and Mediterranean influences. The Nest rooftop is your go-to for elevated dining under the stars.",
-    image: "/new/DSC03995.jpg",
-    detail: "Sip, savour, and escape — where the city skyline meets island vibes.",
+    desc: "Your go-to rooftop destination for elevated dining under the stars. The Nest brings sky-high cocktails, stunning city views and island-inspired bites together in one unforgettable setting. The perfect spot to unwind after a long day.",
+    image: "/nest1.avif",
+    detail: "Elevated dining — where the city skyline meets island vibes.",
     reversed: true
-  }
+  },
+  {
+    name: "Cocoamaya",
+    type: "24-Hour Bakery",
+    icon: Cake,
+    timing: "Open 24 Hours",
+    desc: "Artisanal coffee, freshly baked pastries and bespoke confections — Cocoamaya is your round-the-clock indulgence. A haven for early risers and late-night cravings alike, where every bite is crafted with care and every cup tells a story.",
+    image: "/new/DSC04009.jpg",
+    detail: "Indulgence with no curfew — baked fresh, served always.",
+    reversed: false
+  },
 ];
 
 export function DiningOutletShowcase() {
