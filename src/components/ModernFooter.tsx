@@ -100,9 +100,8 @@ export function ModernFooter() {
           <p className="text-[10px] tracking-[0.5em] uppercase font-black opacity-20">
             © {currentYear} Peninsula Grand Hotel. Managed by Peninsula Hospitality Group.
           </p>
-          <div className="flex gap-16 text-[10px] uppercase tracking-[0.4em] font-black opacity-40">
-            <a href="#" className="hover:text-gold transition-colors" data-cursor="pointer">Privacy</a>
-            <a href="#" className="hover:text-gold transition-colors" data-cursor="pointer">Terms</a>
+          <div className="text-[10px] uppercase tracking-[0.4em] font-black opacity-40">
+            All Rights Reserved
           </div>
         </div>
       </div>

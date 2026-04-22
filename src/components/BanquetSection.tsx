@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Users, Maximize } from "lucide-react";
 
 const VENUES = [
   {
@@ -10,7 +9,6 @@ const VENUES = [
     name: "Concorde Hall",
     sub: "Concorde 1 · 2 · 3 · Combined",
     area: "3,641 sq m",
-    image: "/new/DSC05924.jpg",
     badge: "Signature Hall",
     stats: [
       { label: "U-Shape",   value: "100" },
@@ -25,7 +23,6 @@ const VENUES = [
     name: "The Lawn",
     sub: "Open-Air · Outdoor",
     area: "3,950 sq m",
-    image: "/new/DSC05905.jpg",
     badge: "Grand Lawn",
     stats: [
       { label: "Theatre",  value: "100" },
@@ -39,7 +36,6 @@ const VENUES = [
     name: "Rooftop",
     sub: "Rooftop 1 · Sky Venue",
     area: "1,395 sq m",
-    image: "/new/DSC05948.jpg",
     badge: "Sky Venue",
     stats: [
       { label: "Theatre", value: "200" },
@@ -52,7 +48,6 @@ const VENUES = [
     name: "Garnet Hall",
     sub: "Garnet 1 · 2 · 3 · Combined",
     area: "993 sq m",
-    image: "/new/DSC05930.jpg",
     badge: "Intimate",
     stats: [
       { label: "U-Shape",  value: "36" },
@@ -64,6 +59,47 @@ const VENUES = [
 ];
 
 const SETUPS = ["U-Shape", "Classroom", "Theatre", "Formal Sit-Down", "Cocktail", "Boardroom", "Floor Plan"];
+
+function getMaxGuests(stats: { value: string }[]) {
+  return Math.max(...stats.map((s) => parseInt(s.value, 10)));
+}
+
+function LayoutVisualizer({ area, stats, isFeatured }: { area: string, stats: { value: string }[], isFeatured?: boolean }) {
+  const maxGuests = getMaxGuests(stats);
+  const areaNum = parseInt(area.replace(/,/g, ''), 10);
+  
+  // Constrain visual dimension based on max area (3,950 sq m)
+  const scale = Math.max(Math.min((areaNum / 4000) * 100, 100), 40);
+  
+  return (
+    <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#0a0a0a] overflow-hidden group">
+       {/* Architectural grid background */}
+       <div className="absolute inset-0 opacity-[0.03] transition-opacity duration-1000 group-hover:opacity-[0.08]" 
+            style={{ backgroundImage: 'radial-gradient(#ffffff 1.5px, transparent 1.5px)', backgroundSize: isFeatured ? '24px 24px' : '16px 16px' }} />
+       
+       {/* Bounding box mimicking floorplan size */}
+       <div 
+         className="relative border border-dashed border-gold/30 flex flex-wrap content-center justify-center gap-1.5 p-4 transition-all duration-700 group-hover:border-gold/70 group-hover:scale-[1.02]"
+         style={{ width: `${scale}%`, height: `${scale * 0.7}%`, minHeight: '120px' }}
+       >
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0a0a0a] px-2 text-[8px] text-gold/60 font-mono tracking-widest">{area}</div>
+          
+          {/* Individual seats plotted entirely from data */}
+          {Array.from({ length: maxGuests }).map((_, i) => (
+             <div key={i} className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-gold/50 transition-colors duration-500 group-hover:bg-gold" />
+          ))}
+          
+          <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#0a0a0a] px-2 text-[8px] text-gold/60 font-mono tracking-widest uppercase">{maxGuests} Pax</div>
+       </div>
+       
+       {/* Blueprint Corner Markers */}
+       <div className="absolute top-6 left-6 w-6 h-6 border-l border-t border-gold/20" />
+       <div className="absolute top-6 right-6 w-6 h-6 border-r border-t border-gold/20" />
+       <div className="absolute bottom-6 left-6 w-6 h-6 border-l border-b border-gold/20" />
+       <div className="absolute bottom-6 right-6 w-6 h-6 border-r border-b border-gold/20" />
+    </div>
+  );
+}
 
 export function BanquetSection() {
   const [featured, ...rest] = VENUES;
@@ -89,24 +125,19 @@ export function BanquetSection() {
         <div className="group rounded-3xl overflow-hidden border border-foreground/8 hover:border-gold/25 hover:shadow-2xl transition-all duration-700 mb-4 md:mb-5">
           <div className="flex flex-col md:flex-row">
 
-            {/* Image */}
-            <div className="relative w-full md:w-3/5 aspect-[16/9] md:aspect-auto overflow-hidden" style={{ minHeight: "320px" }}>
-              <Image
-                src={featured.image}
-                alt={featured.name}
-                fill
-                sizes="(max-width: 768px) 100vw, 60vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              {/* Subtle vignette only */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/20 hidden md:block" />
-              <div className="absolute top-5 left-5">
+            {/* Programmatic Graphic Block */}
+            <div className="relative w-full md:w-3/5 overflow-hidden flex flex-col items-center justify-center p-0" style={{ minHeight: "320px" }}>
+              <div className="relative w-full h-full min-h-[320px]">
+                <LayoutVisualizer area={featured.area} stats={featured.stats!} isFeatured={true} />
+              </div>
+              
+              <div className="absolute top-5 left-5 z-10">
                 <span className="bg-gold text-black text-[8px] uppercase tracking-[0.35em] font-black px-3 py-1.5 rounded-full shadow-md">
                   {featured.badge}
                 </span>
               </div>
-              <div className="absolute bottom-5 left-5">
-                <span className="text-[9px] font-black text-white/50 tracking-[0.4em] uppercase bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full">
+              <div className="absolute bottom-5 left-5 z-10">
+                <span className="text-[9px] font-black text-white/50 tracking-[0.4em] uppercase bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
                   {featured.index}
                 </span>
               </div>
@@ -133,7 +164,7 @@ export function BanquetSection() {
               </div>
 
               <div className="mt-8 pt-6 border-t border-foreground/5 flex items-center justify-between">
-                <p className="text-[9px] uppercase tracking-[0.4em] font-black text-foreground/25">Up to 270 guests</p>
+                <p className="text-[9px] uppercase tracking-[0.4em] font-black text-foreground/25">Up to {getMaxGuests(featured.stats)} guests</p>
                 <ArrowRight className="w-4 h-4 text-foreground/20 group-hover:text-gold group-hover:translate-x-1 transition-all duration-300" />
               </div>
             </div>
@@ -145,24 +176,19 @@ export function BanquetSection() {
           {rest.map((venue) => (
             <div
               key={venue.index}
-              className="group rounded-2xl overflow-hidden border border-foreground/8 hover:border-gold/25 hover:shadow-xl transition-all duration-500 flex flex-col"
+              className="group rounded-2xl overflow-hidden border border-foreground/8 hover:border-gold/25 hover:shadow-xl transition-all duration-500 flex flex-col relative"
             >
-              {/* Image */}
-              <div className="relative w-full aspect-[16/10] overflow-hidden">
-                <Image
-                  src={venue.image}
-                  alt={venue.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="text-[9px] font-black text-white/50 tracking-widest bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">
+              {/* Programmatic Graphic Block */}
+              <div className="relative w-full aspect-[16/10] flex flex-col items-center justify-center overflow-hidden">
+                <LayoutVisualizer area={venue.area} stats={venue.stats!} />
+
+                <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
+                  <span className="text-[9px] font-black text-white/50 tracking-widest bg-black/60 border border-white/10 backdrop-blur-sm px-2.5 py-1 rounded-full">
                     {venue.index}
                   </span>
                 </div>
-                <div className="absolute top-4 right-4">
-                  <span className="bg-black/40 backdrop-blur-sm text-white/80 text-[8px] uppercase tracking-[0.3em] font-black px-2.5 py-1 rounded-full">
+                <div className="absolute top-4 right-4 z-10">
+                  <span className="bg-black/60 backdrop-blur-sm text-white/80 text-[8px] uppercase tracking-[0.3em] font-black px-2.5 py-1 rounded-full border border-white/10">
                     {venue.badge}
                   </span>
                 </div>

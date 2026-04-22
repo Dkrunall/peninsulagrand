@@ -28,12 +28,12 @@ export default function DiningPage() {
              Elevate your events with our <span className="italic text-gold">bespoke</span> culinary service.
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8">
-            <button className="w-full sm:w-auto bg-background text-foreground px-10 md:px-16 py-5 md:py-6 rounded-full font-black text-xs uppercase tracking-[0.4em] hover:bg-gold hover:text-background transition-all duration-700 shadow-2xl">
+            <a
+              href="mailto:reservations@peninsulagrand.co.in"
+              className="w-full sm:w-auto bg-background text-foreground px-10 md:px-16 py-5 md:py-6 rounded-full font-black text-xs uppercase tracking-[0.4em] hover:bg-gold hover:text-background transition-all duration-700 shadow-2xl"
+            >
               Inquire for Events
-            </button>
-            <button className="w-full sm:w-auto border border-white/20 text-background px-10 md:px-16 py-5 md:py-6 rounded-full font-black text-xs uppercase tracking-[0.4em] hover:bg-white/10 transition-all duration-700">
-              Download All Menus
-            </button>
+            </a>
           </div>
         </div>
       </section>

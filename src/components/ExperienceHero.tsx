@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 
 interface ExperienceHeroProps {
@@ -56,13 +57,13 @@ export function ExperienceHero({ title, subtitle, highlight, image, tagline }: E
             {title} <br className="hidden md:block" /> <span className="text-gold font-light">{highlight}</span> {subtitle}
           </h1>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
-            <button className="w-full md:w-auto bg-background text-foreground px-12 md:px-16 py-5 md:py-6 rounded-full font-black text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] hover:bg-gold hover:text-foreground transition-all duration-700 shadow-2xl">
-              Plan Your Event
-            </button>
-            <button className="w-full md:w-auto border border-white/20 text-background px-12 md:px-16 py-5 md:py-6 rounded-full font-black text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] hover:bg-white/10 transition-all duration-700">
-              Download Brochure
-            </button>
+          <div className="flex items-center justify-center">
+            <Link
+              href="/contact"
+              className="w-full md:w-auto bg-background text-foreground px-12 md:px-16 py-5 md:py-6 rounded-full font-black text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] hover:bg-gold hover:text-foreground transition-all duration-700 shadow-2xl"
+            >
+              Get in Touch
+            </Link>
           </div>
         </div>
       </div>

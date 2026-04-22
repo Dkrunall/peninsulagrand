@@ -10,9 +10,9 @@ const NAV_ITEMS = [
   { name: "Home", href: "/", icon: Home },
   { name: "About", href: "/about", icon: Info },
   { name: "Rooms", href: "/rooms", icon: Bed },
-  { 
-    name: "Experience", 
-    href: "#", 
+  {
+    name: "Experience",
+    href: "/events",
     icon: Sparkles,
     subItems: [
       { name: "Events", href: "/events", icon: Briefcase },
@@ -39,9 +39,10 @@ export function FloatingNav() {
     }
   });
 
-  const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
-    return pathname.startsWith(href);
+  const isActive = (item: typeof NAV_ITEMS[number]) => {
+    if (item.href === "/") return pathname === "/";
+    if (item.subItems) return item.subItems.some((sub) => pathname.startsWith(sub.href));
+    return pathname.startsWith(item.href);
   };
 
   return (
@@ -59,7 +60,7 @@ export function FloatingNav() {
         <div className="glass shadow-2xl rounded-full p-1.5 md:p-2 flex items-center gap-0.5 border border-white/10 pointer-events-auto backdrop-blur-3xl bg-background/40">
           <div className="flex items-center gap-0.5 md:gap-2 px-1 md:px-2">
             {NAV_ITEMS.map((item) => {
-              const active = isActive(item.href);
+              const active = isActive(item);
               return (
                 <div
                   key={item.name}

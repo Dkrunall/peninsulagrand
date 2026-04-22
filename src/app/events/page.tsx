@@ -4,10 +4,17 @@ import { ModernFooter } from "@/components/ModernFooter";
 import Image from "next/image";
 
 const EVENT_GALLERY = [
-  { src: "/new/DSC05905.jpg", alt: "Concorde Hall Entrance", span: "md:col-span-2 md:row-span-2" },
-  { src: "/new/DSC03980.jpg", alt: "Gala Table Detail", span: "md:col-span-2 md:row-span-1" },
-  { src: "/new/DSC05948.jpg", alt: "Digital Stage Setup", span: "md:col-span-1 md:row-span-1" },
-  { src: "/new/DSC05924.jpg", alt: "Pavillion Grandeur", span: "md:col-span-1 md:row-span-1" },
+  { src: "/events/926d589d-e536-45ad-a969-d35d9c655c82.jpg", alt: "Grand Event Hall", span: "md:col-span-2 md:row-span-2" },
+  { src: "/events/c96103ac-6d1a-4d21-abb0-d7dbf7a8c3ae-3.jpg", alt: "Corporate Gathering", span: "md:col-span-2 md:row-span-1" },
+  { src: "/events/IMG_1534.jpeg", alt: "Gala Setup", span: "md:col-span-1 md:row-span-1" },
+  { src: "/events/IMG_2762.jpg", alt: "Banquet Detail", span: "md:col-span-1 md:row-span-1" },
+];
+
+const PHOTO_GRID = [
+  "/events/PHOTO-2024-04-24-12-58-52-8.jpeg",
+  "/events/PHOTO-2024-04-24-12-58-52-3.jpeg",
+  "/events/PHOTO-2023-08-28-16-58-24-6.jpeg",
+  "/events/PHOTO-2023-08-06-13-08-59-6.jpeg",
 ];
 
 export default function EventsPage() {
@@ -51,8 +58,8 @@ export default function EventsPage() {
             </div>
 
             <div className="relative aspect-[4/5] rounded-[32px] md:rounded-[64px] overflow-hidden shadow-2xl">
-               <Image 
-                 src="/new/DSC05924.jpg"
+               <Image
+                 src="/events/926d589d-e536-45ad-a969-d35d9c655c82.jpg"
                  alt="Event Grandeur"
                  fill
                  sizes="(max-width: 768px) 100vw, 50vw"
@@ -65,11 +72,38 @@ export default function EventsPage() {
       </section>
 
       {/* Cinematic Bento Gallery */}
-      <CinematicGallery 
+      <CinematicGallery
         title="Institutional Grandeur"
         subtitle="The Visual Collection"
         images={EVENT_GALLERY}
       />
+
+      {/* Event Photo Gallery */}
+      <section className="py-16 md:py-32 bg-background px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 md:mb-20">
+            <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-4 italic">Live Moments</p>
+            <h2 className="text-2xl md:text-5xl font-serif text-foreground tracking-tighter leading-tight italic">
+              Events, <span className="text-gold font-light">As They Happen</span>
+            </h2>
+          </div>
+          <div className="columns-2 md:columns-4 gap-3 md:gap-4 space-y-3 md:space-y-4">
+            {PHOTO_GRID.map((src, i) => (
+              <div key={i} className="break-inside-avoid overflow-hidden rounded-2xl relative group">
+                <Image
+                  src={src}
+                  alt={`Event moment ${i + 1}`}
+                  width={600}
+                  height={800}
+                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500 rounded-2xl" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <ModernFooter />
     </main>
