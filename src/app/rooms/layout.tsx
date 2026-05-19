@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Luxury Rooms & Suites | Peninsula Grand Hotel Andheri East Mumbai",
-  description: "Book luxury rooms & suites at Peninsula Grand, Andheri East. Deluxe Rooms, Executive Rooms, Amor Suite, Platinum Suite & Presidential Suite. 4-star luxury near Mumbai Airport. From ₹8,000/night.",
+  title: "Luxury Rooms in Andheri East | Best Hotel Near Mumbai Airport - Hotel Peninsula Grand",
+  description: "Book luxury rooms and suites in Andheri East Mumbai near airport. Business hotel stay with premium amenities at Hotel Peninsula Grand.",
   keywords: [
     "luxury rooms in andheri", "luxury rooms near mumbai airport", "4 star hotel rooms andheri east",
     "hotel rooms near t2 airport mumbai", "best hotel rooms in mumbai", "hotel room in andheri east",

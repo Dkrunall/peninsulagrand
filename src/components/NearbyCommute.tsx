@@ -58,7 +58,7 @@ export function NearbyCommute() {
               A five minutes' drive from the International Airport, situated right next to the Sakinaka Metro Station. The Peninsula Grand places the entire city within arm's reach.
             </p>
             <a
-              href="https://www.google.com/maps/dir//Hotel+Peninsula+Grand,+Junction,+Lokmanya+Tilak+Nagar,+Saki+Naka,+Andheri,+Mumbai,+Maharashtra+400072"
+              href="https://search.google.com/local/writereview?placeid=ChIJAAAAAEB8yzsRnjnjmT1N5Oce"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-4 bg-foreground text-background px-10 py-5 rounded-full font-black text-[10px] uppercase tracking-[0.4em] hover:bg-gold hover:text-foreground transition-all duration-700 shadow-xl group"

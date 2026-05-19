@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Peninsula Grand Hotel Andheri East Mumbai | +91 22 6624 9100",
-  description: "Contact Peninsula Grand Hotel, Andheri East Mumbai. Call +91 22 6624 9100, email reservations@peninsulagrand.co.in. Located at Junction of LBS & Andheri-Kurla Road, Saki Naka, Mumbai 400072. 5 minutes from T2 Airport & Sakinaka Metro.",
+  title: "Best Hotels in Andheri East near Mumbai Airport - Contact Hotel Peninsula Grand",
+  description: "Contact Hotel Peninsula Grand in Andheri East Mumbai near airport for room booking, banquet halls, wedding venue and corporate events.",
   keywords: [
     "peninsula grand hotel contact", "hotel contact andheri east", "hotel phone number andheri",
     "hotel near sakinaka metro contact", "hotels near mumbai airport contact",

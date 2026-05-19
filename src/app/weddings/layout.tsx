@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Wedding Venues & Marriage Halls | Peninsula Grand Hotel Andheri East Mumbai",
-  description: "Celebrate your dream wedding at Peninsula Grand, Andheri East Mumbai. The Lawn (1,200 guests), Concorde Hall (270 guests) & Rooftop venues. Marriage halls, wedding reception venues & small wedding packages near Mumbai Airport.",
+  title: "Wedding Venue in Andheri East | Marriage Hall Near Sakinaka - Hotel Peninsula Grand",
+  description: "Elegant wedding venue and reception hall in Andheri East near Sakinaka. Perfect marriage hall with banquet facilities at Hotel Peninsula Grand.",
   keywords: [
     "marriage hall near me", "marriage halls in andheri east", "banquet hall for wedding",
     "banquet hall for wedding in andheri", "wedding reception venues", "small wedding reception venues",

@@ -43,10 +43,10 @@ export function AboutHero() {
           src="/new/DSC03979.jpg"
           alt="Peninsula Grand Heritage"
           fill
-          className="object-cover opacity-60 grayscale-[0.5]"
+          className="object-cover opacity-100 grayscale-[0.2]"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground via-transparent to-foreground/80"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
       </div>
 
       <div className="relative z-10 text-center px-6">

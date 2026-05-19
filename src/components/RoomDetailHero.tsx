@@ -37,10 +37,10 @@ export function RoomDetailHero({ room }: { room: Room }) {
           src={room.image}
           alt={room.name}
           fill
-          className="object-cover opacity-60"
+          className="object-cover opacity-100"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-transparent to-foreground"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
       </div>
 
       <div className="relative z-10 text-center px-6">

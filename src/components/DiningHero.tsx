@@ -12,7 +12,7 @@ export function DiningHero() {
 
     mm.add("(max-width: 767px)", () => {
       const ctx = gsap.context(() => {
-        gsap.fromTo(".dining-bg", { opacity: 0, scale: 1.05 }, { opacity: 0.7, scale: 1, duration: 1.5, ease: "power3.out" });
+        gsap.fromTo(".dining-bg", { opacity: 0, scale: 1.05 }, { opacity: 1, scale: 1, duration: 1.5, ease: "power3.out" });
         gsap.fromTo(".char", { y: 30, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.025, duration: 0.8, ease: "power3.out", delay: 0.3 });
         gsap.fromTo(".dining-sub", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: 0.6, ease: "power3.out" });
       }, containerRef);
@@ -21,7 +21,7 @@ export function DiningHero() {
 
     mm.add("(min-width: 768px)", () => {
       const ctx = gsap.context(() => {
-        gsap.fromTo(".dining-bg", { opacity: 0, scale: 1.15 }, { opacity: 0.7, scale: 1, duration: 3, ease: "power2.out" });
+        gsap.fromTo(".dining-bg", { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 3, ease: "power2.out" });
         gsap.fromTo(".char", { y: 120, opacity: 0, rotateX: -90 }, { y: 0, opacity: 1, rotateX: 0, stagger: 0.04, duration: 1.8, ease: "expo.out", delay: 0.6 });
         gsap.fromTo(".dining-sub", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1.5, delay: 1.5, ease: "power3.out" });
       }, containerRef);
@@ -44,8 +44,7 @@ export function DiningHero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground via-transparent to-foreground"></div>
-        <div className="absolute inset-0 bg-background/30 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
       </div>
 
       <div className="relative z-10 text-center px-6">

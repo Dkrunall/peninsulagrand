@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Restaurants & Dining | OPA!, MITRON, Waikiki, The Nest, Cocoamaya | Peninsula Grand Mumbai",
-  description: "5 world-class restaurants at Peninsula Grand Andheri East — OPA! Mediterranean rooftop bar, MITRON Bar & Kitchen, Waikiki tropical dining, The Nest sky bar & Cocoamaya 24-hour bakery. Best dining near Mumbai Airport.",
+  title: "Restaurants in Andheri East Mumbai | Buffet & Asian Cuisine - Hotel Peninsula Grand",
+  description: "Enjoy buffet dining, Asian cuisine and corporate lunch at Hotel Peninsula Grand restaurant in Andheri East Mumbai. Ideal for business dining and events.",
   keywords: [
     "buffet restaurants in andheri", "restaurants in andheri east", "best restaurants near mumbai airport",
     "asian cuisine restaurant near me", "mediterranean restaurant mumbai", "rooftop restaurant andheri",

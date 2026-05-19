@@ -41,10 +41,10 @@ export function RoomsHero() {
           src="/new/DSC04031.jpg"
           alt="Peninsula Grand Interiors"
           fill
-          className="object-cover opacity-60"
+          className="object-cover opacity-100"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground via-transparent to-foreground"></div>
+        <div className="absolute inset-0 bg-black/10" />
       </div>
 
       <div className="relative z-10 text-center px-6">

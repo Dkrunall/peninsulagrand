@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Banquet Halls & Corporate Event Venues | Peninsula Grand Andheri East Mumbai",
-  description: "Premium banquet halls & corporate event venues at Peninsula Grand, Andheri East. Concorde Hall (270 guests), The Lawn (400 guests), Rooftop (200 guests). Ideal for conferences, corporate events, office parties & product launches near Mumbai Airport.",
+  title: "Banquet Hall in Andheri East for Corporate Events, Birthday & Anniversary - Hotel Peninsula Grand",
+  description: "Banquet hall in Andheri East Mumbai for corporate events, birthday parties and anniversary celebrations. Luxury event venue near Mumbai airport at Peninsula Grand.",
   keywords: [
     "banquet hall for corporate event in andheri", "banquet hall for corporate event near me",
     "corporate event venues in andheri", "venues for corporate events in andheri",

@@ -108,6 +108,32 @@
     -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 100%);
   }
 
+  .vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  /* Custom Animations */
+  @keyframes scroll-vertical {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-scroll-vertical {
+    animation: scroll-vertical 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  }
+
   /* Hide scrollbar cross-browser while keeping scroll functionality */
   .scrollbar-hide {
     -ms-overflow-style: none;

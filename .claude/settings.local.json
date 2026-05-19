@@ -1,7 +1,16 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:peninsulagrand.com)"
+      "WebFetch(domain:peninsulagrand.com)",
+      "Bash(mkdir -p /c/Users/PGH/Desktop/peninsulagrand/public/rooms)",
+      "Bash(curl -sL -o amor-suite.jpg \"https://peninsulagrand.com/wp-content/uploads/2022/02/amor1-big.jpg\")",
+      "Bash(curl -sL -o deluxe-room.jpg \"https://peninsulagrand.com/wp-content/uploads/2022/02/RAO_2180.jpg\")",
+      "Bash(curl -sL -o platinum-suite.jpg \"https://peninsulagrand.com/wp-content/uploads/2022/02/RAO_9641.jpg\")",
+      "Bash(curl -sL -o executive-room.jpg \"https://peninsulagrand.com/wp-content/uploads/2022/02/DSC04310.jpg\")",
+      "PowerShell(Get-Process *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -16,8 +17,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Peninsula Grand Hotel | 4-Star Luxury Hotel Near Mumbai Airport | Andheri East",
-  description: "Peninsula Grand — 4-star luxury hotel in Andheri East, Mumbai. 5 minutes from T2 International Airport & Sakinaka Metro. Premium rooms, 5 restaurants, banquet halls for weddings & corporate events. Book now.",
+  title: "Best Hotel in Andheri East | Luxury Hotel Near Mumbai Airport - Hotel Peninsula Grand",
+  description: "Hotel Peninsula Grand, a luxury 4 star hotel near Mumbai International Airport in Andheri East offering luxury rooms, banquet halls, wedding venues, dining and corporate facilities.",
   keywords: [
     "hotel near airport in mumbai", "hotel near airport", "hotels near mumbai international airport",
     "hotel in andheri east", "hotel in andheri east mumbai", "hotel in andheri mumbai",
@@ -64,11 +65,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.peninsulagrand.com",
   },
+  verification: {
+    google: "J-BJglFUv7daGxrcOtD536Ykeb3GA0WcNJ6-5mlhJ14",
+  },
 };
 
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { PremiumCursor } from "@/components/PremiumCursor";
 import { FloatingNav } from "@/components/FloatingNav";
+import { FloatingActions } from "@/components/FloatingActions";
 
 export default function RootLayout({
   children,
@@ -77,6 +82,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSans.variable} ${cormorant.variable} h-full antialiased`}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PNDD4C9Q26"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PNDD4C9Q26');
+          `}
+        </Script>
+      </head>
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground grain overflow-x-hidden cursor-auto md:cursor-none">
         <script
           type="application/ld+json"
@@ -129,6 +148,7 @@ export default function RootLayout({
         <PremiumCursor />
         <SmoothScroll>
           <FloatingNav />
+          <FloatingActions />
           {children}
         </SmoothScroll>
       </body>
