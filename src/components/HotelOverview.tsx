@@ -1,3 +1,5 @@
+"use client";
+
 import { MapPin, BedDouble, Building2, Star, Award } from "lucide-react";
 
 const WHY_CHOOSE = [
