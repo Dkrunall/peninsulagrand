@@ -82,7 +82,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSans.variable} ${cormorant.variable} h-full antialiased`}>
-      <head>
+      <body className="min-h-full flex flex-col font-sans bg-background text-foreground grain overflow-x-hidden cursor-auto md:cursor-none">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-PNDD4C9Q26"
           strategy="afterInteractive"
@@ -95,8 +95,6 @@ export default function RootLayout({
             gtag('config', 'G-PNDD4C9Q26');
           `}
         </Script>
-      </head>
-      <body className="min-h-full flex flex-col font-sans bg-background text-foreground grain overflow-x-hidden cursor-auto md:cursor-none">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
