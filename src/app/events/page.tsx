@@ -39,20 +39,28 @@ export default function EventsPage() {
             <div>
                <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-6 md:mb-10 italic">Venue Portfolio</p>
                <h2 className="text-2xl md:text-5xl font-serif text-foreground mb-6 md:mb-12 tracking-tighter leading-tight italic">
-                 Where <span className="text-gold font-light">Ambition</span> meets its match.
+                 Where <span className="text-gold font-light">Vision</span> meets Excellence.
                </h2>
                <p className="text-base md:text-xl text-foreground/60 font-serif leading-relaxed italic mb-6 md:mb-12 md:pr-10">
-                 From global summits in the Concorde Hall to strategic boardroom sessions, Peninsula Grand provides the architectural gravitas and technological infrastructure to elevate every corporate milestone.
+                 From leadership summits and annual conferences to executive meetings and corporate networking events, Peninsula Grand delivers refined venues designed for productivity, collaboration, and seamless hospitality. Whether you are searching for a premium hall for corporate events or sophisticated business spaces in Mumbai, our venues are tailored to elevate every professional gathering.
                </p>
 
                <div className="space-y-6 md:space-y-12">
                   <div className="group border-l border-foreground/5 pl-8 hover:border-gold transition-colors duration-700">
-                     <h3 className="text-2xl font-serif text-foreground mb-4 italic group-hover:text-gold transition-colors">Concorde & Grand Pavillion</h3>
-                     <p className="text-sm text-foreground/40 leading-relaxed max-w-md">Our signature halls designed for up to 800 guests, featuring state-of-the-art acoustics and flexible configurations.</p>
+                     <h3 className="text-2xl font-serif text-foreground mb-4 italic group-hover:text-gold transition-colors">Concorde & Grand Pavilion</h3>
+                     <p className="text-sm text-foreground/40 leading-relaxed max-w-md">Elegant event spaces designed for large-scale conferences, award ceremonies, product launches, and premium corporate gatherings with advanced event infrastructure.</p>
+                  </div>
+                  <div className="group border-l border-foreground/5 pl-8 hover:border-gold transition-colors duration-700">
+                     <h3 className="text-2xl font-serif text-foreground mb-4 italic group-hover:text-gold transition-colors">Banquet Hall for Corporate Events</h3>
+                     <p className="text-sm text-foreground/40 leading-relaxed max-w-md">A professionally curated venue experience featuring modern AV support, flexible seating arrangements, premium dining, and seamless event coordination for successful business events.</p>
                   </div>
                   <div className="group border-l border-foreground/5 pl-8 hover:border-gold transition-colors duration-700">
                      <h3 className="text-2xl font-serif text-foreground mb-4 italic group-hover:text-gold transition-colors">The Boardroom Suites</h3>
-                     <p className="text-sm text-foreground/40 leading-relaxed max-w-md">Intimate, secure environments for strategic decisions, equipped with high-fidelity AV and private secretariat services.</p>
+                     <p className="text-sm text-foreground/40 leading-relaxed max-w-md">Private and sophisticated meeting environments ideal for strategic discussions, executive presentations, and focused corporate interactions.</p>
+                  </div>
+                  <div className="group border-l border-foreground/5 pl-8 hover:border-gold transition-colors duration-700">
+                     <h3 className="text-2xl font-serif text-foreground mb-4 italic group-hover:text-gold transition-colors">Corporate Stay in Andheri</h3>
+                     <p className="text-sm text-foreground/40 leading-relaxed max-w-md">Experience comfortable business accommodation with luxury hospitality, modern amenities, and seamless airport connectivity for executives and business travellers visiting Andheri East Mumbai.</p>
                   </div>
                </div>
             </div>

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Peninsula Grand Hotel — Luxury Hotel Since 1994 | Andheri East Mumbai",
-  description: "Peninsula Grand Hotel — established 1994. One of Mumbai's finest 4-star luxury hotels in Andheri East, 5 minutes from T2 International Airport. Discover our legacy of exceptional hospitality, world-class dining and premium event spaces.",
+  title: "About Peninsula Grand | Luxury Hotel Near Airport in Mumbai | Andheri East",
+  description: "Discover Peninsula Grand – a premium 4 star hotel in Andheri East near Mumbai International Airport offering luxury stays, elegant banquet halls, fine dining, and exceptional hospitality.",
   keywords: [
     "about peninsula grand hotel", "luxury hotels in mumbai history", "4 star hotel andheri east",
     "best hotels in mumbai", "finest luxury hotels in andheri", "luxury hotels in andheri",

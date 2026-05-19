@@ -15,6 +15,8 @@ export interface Room {
   longDesc: string;
   amenities: string[];
   features: string[];
+  seoTitle: string;
+  seoDescription: string;
   reversed?: boolean;
 }
 
@@ -23,130 +25,160 @@ export const ROOMS_DATA: Room[] = [
     slug: "presidential-suite",
     name: "Presidential Suite",
     type: "Iconic Opulence",
-    image: "/new/DSC05993.jpg",
+    image: "/rooms/presidential-suite.jpg",
     adults: 3,
     children: 1,
-    size: "1200 sq.ft",
-    desc: "A sanctuary of unparalleled grandeur. The finest luxury for those who demand the absolute best in Mumbai.",
-    longDesc: "The Presidential Suite at Peninsula Grand is our most prestigious residency. Spanning a generous layout with separate living areas and master boudouir, it exemplfies sophisticated hospitality and exceptional comfort. Experience a stay where every detail, from the hand-picked furnishings to the panoramic city views, is thoughtfully curated to meet your highest needs.",
+    size: "900 sq.ft",
+    desc: "The ultimate abode for the travelling king. In-room bar counter, fully stocked mini bar with international spirits, and pure opulence at every turn.",
+    longDesc: "Experience elevated comfort and refined hospitality in the Presidential Suite at Peninsula Grand — the most prestigious accommodation designed for guests seeking luxury, privacy, and sophistication in the heart of Mumbai. Located at a premium hotel near airport in Mumbai, this exclusive suite offers a perfect blend of spacious interiors, modern amenities, and personalized hospitality for business and leisure travellers. Spanning across 900 sq. ft., the Presidential Suite is thoughtfully designed to deliver an exceptional stay experience with elegant interiors, premium furnishings, and world-class comforts.",
     amenities: [
-      "Master Lounge",
-      "Private Dining Area",
-      "Rainforest Shower",
-      "Pillow Menu",
-      "24/7 Butler Service",
-      "Integrated Smart Home Controls"
+      "In-Room Bar Counter",
+      "Fully Stocked Mini Bar",
+      "Complimentary Breakfast",
+      "LCD TV",
+      "Hi-Speed WiFi",
+      "Safe Locker",
+      "Tea & Coffee Maker",
+      "Smart Key Card Locks",
+      "24-Hour Room Service",
+      "Hairdryer"
     ],
     features: [
+      "Separate Living & Seating Area",
       "Panoramic City Views",
-      "Artisanal Furnishings",
-      "High-Speed Connectivity",
-      "Sound-Insulated Walls"
+      "Premium King-Size Bedding",
+      "Luxury Bathroom Amenities"
     ],
+    seoTitle: "Presidential Suite – Luxury Suite Near Mumbai Airport | Hotel Peninsula Grand",
+    seoDescription: "Experience elevated comfort in the Presidential Suite at Peninsula Grand. A 900 sq. ft. luxury suite near Mumbai International Airport with premium amenities, in-room bar, and personalized hospitality.",
     reversed: false
   },
   {
     slug: "platinum-suite",
     name: "Platinum Suite",
     type: "Elite Residency",
-    image: "/new/DSC05961.jpg",
+    image: "/rooms/platinum-suite.jpg",
     adults: 3,
     children: 1,
-    size: "800 sq.ft",
-    desc: "Modern luxury meeting artisanal craftsmanship. An elite environment perfectly crafted for both business and leisure.",
-    longDesc: "The Platinum Suite offers unparalleled comfort at Peninsula Grand Hotel. Designed with a perfect balance of contemporary style and warm hospitalty, it features open-plan living and premium amenities that create the ideal sanctuary for the modern global traveler.",
+    size: "700 sq.ft",
+    desc: "A perfect setting for the jet-set elite. Revive and recharge in 700 sq.ft. of refined luxury before your next big moment.",
+    longDesc: "Experience contemporary elegance and exceptional comfort in the Platinum Suite at Peninsula Grand, thoughtfully designed for modern business and leisure travellers. Located at a premium hotel near airport in Mumbai, the Platinum Suite offers the perfect combination of spacious interiors, refined hospitality, and modern amenities for guests seeking a luxurious stay experience in Mumbai. Spanning 700 sq. ft., the Platinum Suite is crafted to deliver sophistication, relaxation, and convenience — whether you are travelling for corporate meetings, airport transit stays, or leisure experiences.",
     amenities: [
-      "Designer Workstation",
-      "Spa-Style Bathroom",
-      "Nespresso Machine",
-      "High-Fidelity Audio System",
-      "Premium Mini-Bar",
-      "Walk-in Closet"
+      "King-Size Bed",
+      "Fully Stocked Mini Bar",
+      "Complimentary Breakfast",
+      "LCD TV",
+      "Hi-Speed WiFi",
+      "Safe Locker",
+      "Tea & Coffee Maker",
+      "Smart Key Card Locks",
+      "24-Hour Room Service",
+      "Hairdryer"
     ],
     features: [
-      "Modern Minimalist Aesthetic",
-      "Natural Stone Finishes",
-      "Intelligent Lighting",
-      "Executive Access"
+      "King Bed",
+      "700 sq.ft. Living Space",
+      "Premium Bedding",
+      "High-Speed Connectivity"
     ],
+    seoTitle: "Platinum Suite – Premium Luxury Stay Near Mumbai Airport | Hotel Peninsula Grand",
+    seoDescription: "Experience contemporary elegance in the Platinum Suite at Peninsula Grand. A 700 sq. ft. luxury suite near Mumbai International Airport with premium amenities and refined hospitality.",
     reversed: true
   },
   {
     slug: "amor-suite",
     name: "Amor Suite",
     type: "Romance & Art",
-    image: "/new/DSC05986.jpg",
+    image: "/rooms/amor-suite.jpg",
     adults: 3,
     children: 1,
-    size: "650 sq.ft",
-    desc: "A boutique escape crafted for connection. Soft ambient lighting and elegant furnishings create a sanctuary of romantic serenity.",
-    longDesc: "The Amor Suite is a celebration of connection and intimacy. Soft textures, curved architectural lines, and a warm palette of rose gold and slate create a cocoon of serenity. Ideal for couples seeking a boutique atmosphere within the grand setting of our hotel, it offers an curated experience of romantic luxury.",
+    size: "550 sq.ft",
+    desc: "550 sq.ft. of personal space that pampers you. Massaging chair, premium bedding, and modern connectivity for pure romantic indulgence.",
+    longDesc: "Escape into a world of comfort, intimacy, and elegance with the Amor Suite at Peninsula Grand. Thoughtfully designed for couples and leisure travellers, this luxurious suite offers a warm and relaxing atmosphere in the heart of Mumbai. Located at a premium hotel in Andheri East, the Amor Suite blends modern comforts with romantic ambience, creating the perfect destination for memorable stays and special moments. Spread across 550 sq. ft., the suite is designed to offer indulgent personal space with premium amenities, stylish interiors, and a peaceful environment ideal for relaxation and connection.",
     amenities: [
-      "Ambient Mood Lighting",
-      "Plush Velvet Seating",
-      "Deep Soaking Tub",
-      "Complimentary Champagne on Arrival",
-      "Curated Art Pieces",
-      "Floral Concierge"
+      "Massaging Chair",
+      "King-Size Bed",
+      "Fully Stocked Mini Bar",
+      "Complimentary Breakfast",
+      "LCD TV",
+      "Hi-Speed WiFi",
+      "Safe Locker",
+      "Tea & Coffee Maker",
+      "Smart Key Card Locks",
+      "24-Hour Room Service"
     ],
     features: [
-      "Intimate Layout",
-      "Sophisticated Color Palette",
-      "Bespoke Fragrance",
-      "Premium Soundscapes"
+      "Signature Massaging Chair",
+      "550 sq.ft. Personal Space",
+      "Warm Ambient Interiors",
+      "Premium King-Size Bedding"
     ],
+    seoTitle: "Amor Suite – Romantic Luxury Stay in Andheri East Mumbai | Hotel Peninsula Grand",
+    seoDescription: "Experience romantic luxury in the Amor Suite at Peninsula Grand. A 550 sq. ft. suite in Andheri East near Mumbai Airport with a signature massaging chair, premium amenities, and intimate hospitality.",
     reversed: false
   },
   {
     slug: "executive-room",
     name: "Executive Room",
     type: "Business Elegance",
-    image: "/new/DSC05908.jpg",
+    image: "/rooms/executive-room.jpg",
     adults: 3,
     children: 1,
-    size: "450 sq.ft",
-    desc: "Efficiency meets luxury. An ergonomic masterpiece designed for the modern business nomad who demands comfort.",
-    longDesc: "Our Executive Rooms are thoughtfully curated to meet the needs of high-performing professionals. Combining a prime location near Mumbai's CBD with exceptional comfort, these rooms ensure your business stay is as productive as it is relaxing.",
+    size: "City View",
+    desc: "Suited for business and leisure alike. Stunning city views, functional luxury, and every amenity the modern traveller needs.",
+    longDesc: "Experience comfort, convenience, and contemporary hospitality with the Executive Rooms at Peninsula Grand. Thoughtfully designed for corporate travellers and modern leisure guests, these premium rooms combine elegant interiors with smart amenities to create a productive and relaxing stay experience in Mumbai. Located at a leading business hotel near Mumbai airport, our Executive Rooms are ideal for professionals attending meetings, conferences, or business events, while also offering the perfect retreat for leisure travellers exploring the city.",
     amenities: [
-      "Ergonomic Chair",
-      "Universal Power Hubs",
-      "4K Ultra-HD Display",
-      "Steam Iron & Board",
-      "Evening Turndown Service",
-      "Express Laundry Service"
+      "Twin / King Bed Options",
+      "Safe Deposit Locker",
+      "Complimentary Breakfast",
+      "LCD TV",
+      "Hi-Speed WiFi",
+      "Tea & Coffee Maker",
+      "Smart Key Card Locks",
+      "24-Hour Room Service",
+      "Hairdryer",
+      "Fully Stocked Mini Bar"
     ],
     features: [
-      "Quiet Luxury Design",
-      "Optimized Workflow Space",
-      "Sustainable Materials",
-      "City View Options"
+      "Twin / King Bed Options",
+      "Stunning City Views",
+      "Elegant Workspace & Seating",
+      "High-Speed Connectivity"
     ],
+    seoTitle: "Executive Rooms – Business Hotel Rooms in Andheri East Mumbai | Hotel Peninsula Grand",
+    seoDescription: "Stay in Executive Rooms at Peninsula Grand — a business hotel near Mumbai airport in Andheri East. Smart amenities, city views, and premium hospitality for corporate and leisure travellers.",
     reversed: true
   },
   {
     slug: "deluxe-room",
     name: "Deluxe Room",
     type: "Classic Sophistication",
-    image: "/new/DSC04040.jpg",
+    image: "/rooms/deluxe-room.jpg",
     adults: 3,
     children: 1,
-    size: "400 sq.ft",
-    desc: "A timeless blend of comfort and style. The perfect sanctuary for the global traveler seeking Mumbai's warmest hospitality.",
-    longDesc: "The Deluxe Room exemplifies our commitment to sophisticated hospitality. Ideal for both leisure and business travelers, it offers a serene retreat with four-star amenities designed to enhance every aspect of your stay in the heart of the city.",
+    size: "250 sq.ft",
+    desc: "Designed for the always-on-the-move traveller. Uninterrupted hi-speed WiFi, laptop-compatible safe, and direct dial for seamless connectivity.",
+    longDesc: "Experience smart comfort and modern convenience with the Deluxe Room at Peninsula Grand, thoughtfully designed for business travellers and modern professionals. Located at a premium business hotel in Mumbai, the Deluxe Room offers a seamless combination of functionality, comfort, and accessibility for guests travelling for work or leisure. Whether you are visiting the city for corporate meetings, short business trips, airport transit stays, or weekend travel, our Deluxe Room provides a relaxing and efficient stay experience close to Mumbai International Airport and key commercial hubs.",
     amenities: [
-      "King / Twin Bed Options",
-      "Marble Finished Bath",
-      "In-Room Safety Vault",
-      "Bottled Mineral Water",
-      "Dressing Vanity",
-      "Tea & Coffee Maker"
+      "Twin / King Bed Options",
+      "Laptop-Compatible Safe",
+      "Complimentary Breakfast",
+      "LCD TV",
+      "Hi-Speed WiFi",
+      "Tea & Coffee Maker",
+      "Smart Key Card Locks",
+      "24-Hour Room Service",
+      "Hairdryer",
+      "Direct Dial Facility"
     ],
     features: [
-      "Timeless Interior Design",
-      "Spacious Layout",
-      "Premium Bedding",
-      "Centralized Climate Control"
+      "Twin / King Bed Options",
+      "Laptop-Compatible Safe",
+      "Work-Friendly Environment",
+      "High-Speed Connectivity"
     ],
+    seoTitle: "Deluxe Room – Business Hotel Stay in Andheri East Mumbai | Hotel Peninsula Grand",
+    seoDescription: "Book the Deluxe Room at Peninsula Grand — a business hotel near Mumbai airport in Andheri East. Smart amenities, laptop-compatible safe, and comfortable hospitality for corporate and leisure travellers.",
     reversed: false
   }
 ];

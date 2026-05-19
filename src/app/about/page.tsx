@@ -4,6 +4,7 @@ import { ModernFooter } from "@/components/ModernFooter";
 import { AboutHero } from "@/components/AboutHero";
 import { AboutStory } from "@/components/AboutStory";
 import { AboutPhilosophy } from "@/components/AboutPhilosophy";
+import { HotelOverview } from "@/components/HotelOverview";
 
 export default function AboutPage() {
   return (
@@ -18,6 +19,9 @@ export default function AboutPage() {
       <div id="philosophy">
         <AboutPhilosophy />
       </div>
+
+      {/* SEO Content Section */}
+      <HotelOverview />
 
       {/* Legacy Call to Action */}
       <section className="py-16 md:py-40 bg-background text-center px-6">

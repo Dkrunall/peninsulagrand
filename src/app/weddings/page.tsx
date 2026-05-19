@@ -57,30 +57,30 @@ export default function WeddingsPage() {
             </div>
 
             <div className="order-1 lg:order-2">
-               <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-6 md:mb-10 italic">Sacred Spaces</p>
+               <p className="text-[10px] uppercase tracking-[0.8em] font-black text-gold mb-6 md:mb-10 italic">Sacred Celebrations</p>
                <h2 className="text-2xl md:text-5xl font-serif text-foreground mb-6 md:mb-12 tracking-tighter leading-tight italic">
-                 An <span className="text-gold font-light">Odyssey</span> of love.
+                 Where <span className="text-gold font-light">Forever</span> Begins.
                </h2>
                <p className="text-base md:text-xl text-foreground/60 font-serif leading-relaxed italic mb-6 md:mb-12">
-                 From lush open-air lawns capable of hosting 1500 guests to intimate preparation suites, we orchestrate every detail so your story unfolds in absolute splendor.
+                 From elegant indoor gatherings to grand open-air celebrations, Peninsula Grand curates unforgettable wedding experiences crafted with luxury, emotion, and timeless hospitality. Whether you are searching for intimate small wedding reception venues or lavish wedding and reception venues in Mumbai, every detail is thoughtfully orchestrated to turn your special day into a lasting memory.
                </p>
 
                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-12">
                   <div className="space-y-4">
-                     <h3 className="text-xl font-bold text-gold uppercase tracking-widest text-[10px]">The Lawn</h3>
-                     <p className="text-sm text-foreground/60 leading-relaxed italic">A 1200-capacity emerald sanctuary under the Mumbai stars.</p>
+                     <h3 className="text-[10px] font-bold text-gold uppercase tracking-widest">The Grand Lawn</h3>
+                     <p className="text-sm text-foreground/60 leading-relaxed italic">A stunning open-air celebration space perfect for luxurious wedding ceremonies and unforgettable receptions under the Mumbai skyline.</p>
                   </div>
                   <div className="space-y-4">
-                     <h3 className="text-xl font-bold text-gold uppercase tracking-widest text-[10px]">Bridal Atriums</h3>
-                     <p className="text-sm text-foreground/60 leading-relaxed italic">Private sanctuaries designed for the calm before the celebration.</p>
+                     <h3 className="text-[10px] font-bold text-gold uppercase tracking-widest">The Ballroom</h3>
+                     <p className="text-sm text-foreground/60 leading-relaxed italic">An elegant indoor destination designed for sophisticated celebrations, bespoke décor, and timeless wedding moments.</p>
                   </div>
                   <div className="space-y-4">
-                     <h3 className="text-xl font-bold text-gold uppercase tracking-widest text-[10px]">The Ballroom</h3>
-                     <p className="text-sm text-foreground/60 leading-relaxed italic">Indoor grandeur with bespoke floral architecture.</p>
+                     <h3 className="text-[10px] font-bold text-gold uppercase tracking-widest">Wedding Reception Venues</h3>
+                     <p className="text-sm text-foreground/60 leading-relaxed italic">Beautifully curated spaces tailored for engagement functions, receptions, and memorable family celebrations with refined hospitality.</p>
                   </div>
                   <div className="space-y-4">
-                     <h3 className="text-xl font-bold text-gold uppercase tracking-widest text-[10px]">Curated Menu</h3>
-                     <p className="text-sm text-foreground/60 leading-relaxed italic">A culinary journey tailored to your lineage and legacy.</p>
+                     <h3 className="text-[10px] font-bold text-gold uppercase tracking-widest">Banquet Hall for Wedding in Andheri</h3>
+                     <p className="text-sm text-foreground/60 leading-relaxed italic">A premium venue experience in the heart of Andheri offering exceptional ambience, curated dining, and seamless event execution for your big day.</p>
                   </div>
                </div>
             </div>
