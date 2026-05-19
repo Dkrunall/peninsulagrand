@@ -10,7 +10,6 @@ import { ModernFooter } from "@/components/ModernFooter";
 import { StatsSection } from "@/components/StatsSection";
 import { NearbyCommute } from "@/components/NearbyCommute";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { HotelOverview } from "@/components/HotelOverview";
 
 export default function Home() {
   return (
@@ -74,9 +73,6 @@ export default function Home() {
 
       {/* Guest Testimonials */}
       <TestimonialsSection />
-
-      {/* SEO Content Section */}
-      <HotelOverview />
 
       <section className="py-16 md:py-24 px-6 md:px-12 bg-background flex flex-col items-center justify-center text-center">
         <div className="max-w-4xl">
