@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
-import { Home, Info, Bed, Utensils, Phone, Sparkles, Heart, Briefcase, ExternalLink, BookOpen } from "lucide-react";
+import { Home, Info, Bed, Utensils, Phone, Sparkles, Heart, Briefcase, ExternalLink, BookOpen, Users } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -65,12 +65,12 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
   {
-    name: "Events",
-    href: "/events",
-    icon: Sparkles,
+    name: "Banquets",
+    href: "/banquets",
+    icon: Users,
     subItems: [
-      { name: "Wedding", href: "/weddings", icon: Heart },
-      { name: "Corporate Events", href: "/events", icon: Briefcase },
+      { name: "Weddings & Social Events", href: "/weddings", icon: Heart },
+      { name: "Corporate Events & Meetings", href: "/banquets", icon: Briefcase },
     ],
   },
   { name: "Blog", href: "/blog", icon: BookOpen, mobileHidden: true },
@@ -128,8 +128,9 @@ export function FloatingNav() {
                   className={`relative flex-shrink-0 ${item.mobileHidden ? "hidden md:block" : ""}`}
                 >
                   {hasDropdown(item) ? (
-                    <button
-                      onClick={() => setHoveredItem(isHovered ? null : item.name)}
+                    <Link
+                      href={item.href}
+                      onClick={() => setHoveredItem(null)}
                       className="group relative p-2.5 md:px-4 md:py-3 rounded-full transition-all duration-500 overflow-hidden flex items-center gap-2 outline-none hover:bg-foreground/5"
                       data-cursor="pointer"
                     >
@@ -146,7 +147,7 @@ export function FloatingNav() {
                       {active && (
                         <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-gold" />
                       )}
-                    </button>
+                    </Link>
                   ) : (
                     <Link
                       href={item.href}
@@ -177,7 +178,7 @@ export function FloatingNav() {
                         animate={{ opacity: 1, y: -10, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                        className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 glass rounded-[28px] border border-white/10 shadow-2xl overflow-hidden w-52 md:w-60 z-[200]"
+                        className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 glass rounded-[28px] border border-white/10 shadow-2xl overflow-hidden w-60 md:w-72 z-[200]"
                       >
                         {/* Grouped rooms layout */}
                         {item.groups ? (
@@ -207,7 +208,7 @@ export function FloatingNav() {
                             ))}
                           </div>
                         ) : (
-                          /* Standard flat dropdown (Dining, Events) */
+                          /* Standard flat dropdown (Dining, Banquets) */
                           <div className="p-3 md:p-4 flex flex-col gap-1.5">
                             {item.subItems!.map((sub) =>
                               sub.external ? (
@@ -219,7 +220,7 @@ export function FloatingNav() {
                                   className="flex items-center justify-between gap-2 px-4 py-3 rounded-2xl hover:bg-gold hover:text-background transition-all duration-500 group/sub outline-none"
                                   data-cursor="pointer"
                                 >
-                                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap">
+                                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.15em] whitespace-nowrap">
                                     {sub.name}
                                   </span>
                                   <ExternalLink className="w-3 h-3 text-gold group-hover/sub:text-background transition-colors flex-shrink-0" />
@@ -228,11 +229,11 @@ export function FloatingNav() {
                                 <Link
                                   key={sub.name}
                                   href={sub.href}
-                                  className="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-gold hover:text-background transition-all duration-500 group/sub outline-none"
+                                  onClick={() => setHoveredItem(null)}
+                                  className="flex items-center px-4 py-3 rounded-2xl hover:bg-gold hover:text-background transition-all duration-500 group/sub outline-none"
                                   data-cursor="pointer"
                                 >
-                                  {sub.icon && (() => { const Icon = sub.icon!; return <Icon className="w-3.5 h-3.5 text-gold group-hover/sub:text-background transition-colors flex-shrink-0" />; })()}
-                                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap">
+                                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.15em] whitespace-nowrap">
                                     {sub.name}
                                   </span>
                                 </Link>

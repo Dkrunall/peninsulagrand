@@ -196,14 +196,14 @@ export function HorizontalRooms() {
               </div>
               <p className="text-xs text-white/50 italic leading-relaxed mb-4">{room.description}</p>
 
-              <div className="grid grid-cols-2 gap-1.5 mb-5">
+              {/* <div className="grid grid-cols-2 gap-1.5 mb-5">
                 {room.amenities.map((a, j) => (
                   <div key={j} className="flex items-center gap-1.5">
                     <div className="w-1 h-1 rounded-full bg-gold flex-shrink-0" />
                     <span className="text-[10px] font-semibold text-white/35">{a}</span>
                   </div>
                 ))}
-              </div>
+              </div> */}
 
               <div className="h-px bg-white/5 mb-4 mt-auto" />
 

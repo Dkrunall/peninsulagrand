@@ -25,6 +25,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function EventsLayout({ children }: { children: React.ReactNode }) {
+export default function BanquetsLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

@@ -230,7 +230,7 @@ export function BanquetSection() {
           </div>
 
           <Link
-            href="/events"
+            href="/banquets"
             className="flex-shrink-0 flex items-center gap-2 bg-foreground text-background px-7 py-3.5 rounded-full text-[10px] uppercase tracking-[0.4em] font-black hover:bg-gold hover:text-foreground transition-all duration-500"
           >
             Plan Your Event <ArrowRight className="w-3 h-3" />

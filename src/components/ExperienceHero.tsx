@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Phone as PhoneIcon } from "lucide-react";
 import gsap from "gsap";
 
 interface ExperienceHeroProps {
@@ -11,9 +12,10 @@ interface ExperienceHeroProps {
   highlight: string;
   image: string;
   tagline: string;
+  phone?: string;
 }
 
-export function ExperienceHero({ title, subtitle, highlight, image, tagline }: ExperienceHeroProps) {
+export function ExperienceHero({ title, subtitle, highlight, image, tagline, phone }: ExperienceHeroProps) {
   const containerRef = useRef<HTMLElement>(null);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -53,18 +55,21 @@ export function ExperienceHero({ title, subtitle, highlight, image, tagline }: E
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
         <div className="hero-content">
           <p className="text-[10px] uppercase tracking-[1em] font-black text-gold mb-4 md:mb-12 italic pl-2">{tagline}</p>
-          <h1 className="text-2xl md:text-[5vw] font-serif text-background leading-[1.1] md:leading-[0.9] tracking-tighter mb-8 md:mb-16 italic text-center uppercase">
+          <h1 className="text-2xl md:text-[5vw] font-serif text-background leading-[1.1] md:leading-[0.9] tracking-tighter mb-8 md:mb-12 italic text-center uppercase">
             {title} <br className="hidden md:block" /> <span className="text-gold font-light">{highlight}</span> {subtitle}
           </h1>
 
-          <div className="flex items-center justify-center">
-            <Link
-              href="/contact"
-              className="w-full md:w-auto bg-background text-foreground px-12 md:px-16 py-5 md:py-6 rounded-full font-black text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] hover:bg-gold hover:text-foreground transition-all duration-700 shadow-2xl"
-            >
-              Get in Touch
-            </Link>
-          </div>
+          {phone && (
+            <div className="flex justify-center">
+              <a
+                href={`tel:${phone.replace(/\s+/g, '')}`}
+                className="group inline-flex items-center gap-3.5 bg-gold text-black hover:bg-white border-2 border-gold hover:border-white px-10 py-5 md:px-12 md:py-6 rounded-full text-sm md:text-base font-black uppercase tracking-widest transition-all duration-300 shadow-[0_0_40px_rgba(212,175,55,0.5)]"
+              >
+                <PhoneIcon className="w-5 h-5 text-black group-hover:text-black transition-colors" />
+                <span>Banquet Reservations: {phone}</span>
+              </a>
+            </div>
+          )}
         </div>
       </div>
 

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const HERO_IMAGES = [
@@ -109,10 +109,21 @@ export function KineticHero() {
         </h1>
 
         {/* Tagline */}
-        <p className="hero-sub text-white/90 leading-relaxed mb-10
+        <p className="hero-sub text-white/90 leading-relaxed mb-6
           text-base sm:text-lg md:text-xl max-w-2xl font-medium drop-shadow-lg font-serif italic">
           "Mumbai's finest luxury address — An oasis of isolation in the heart of the city."
         </p>
+
+        {/* Reservation Call Button */}
+        <div className="hero-cta flex items-center justify-center gap-3">
+          <a
+            href="tel:+918828243222"
+            className="group flex items-center gap-2.5 bg-black/50 hover:bg-gold backdrop-blur-md text-white hover:text-black border border-gold/40 hover:border-gold px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-500 shadow-2xl"
+          >
+            <Phone className="w-4 h-4 text-gold group-hover:text-black transition-colors" />
+            <span>Reservations: +91 88282 43222</span>
+          </a>
+        </div>
       </div>
 
       {/* Bottom trust strip */}

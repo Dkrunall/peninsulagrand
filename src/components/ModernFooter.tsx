@@ -60,11 +60,23 @@ export function ModernFooter() {
                  </div>
                  <span className="font-bold text-sm tracking-wide group-hover:text-gold transition-colors duration-500 underline underline-offset-8 decoration-gold/0 group-hover:decoration-gold/100">reservations@peninsulagrand.co.in</span>
               </a>
+              <a href="tel:+918828243222" className="flex items-center gap-4 group" data-cursor="pointer">
+                 <div className="w-10 h-10 rounded-full bg-background flex items-center justify-center shrink-0 group-hover:bg-gold transition-all duration-700 shadow-xl">
+                   <Phone className="w-4 h-4 text-foreground group-hover:text-background transition-colors" />
+                 </div>
+                 <div className="flex flex-col">
+                   <span className="text-[9px] uppercase tracking-widest text-gold font-bold">Banquet Reservations</span>
+                   <span className="font-bold text-sm tracking-wide group-hover:text-gold transition-colors duration-500 underline underline-offset-4 decoration-gold/0 group-hover:decoration-gold/100">+91 88282 43222</span>
+                 </div>
+              </a>
               <a href="tel:+912266249100" className="flex items-center gap-4 group" data-cursor="pointer">
                  <div className="w-10 h-10 rounded-full bg-background flex items-center justify-center shrink-0 group-hover:bg-gold transition-all duration-700 shadow-xl">
                    <Phone className="w-4 h-4 text-foreground group-hover:text-background transition-colors" />
                  </div>
-                 <span className="font-bold text-sm tracking-wide group-hover:text-gold transition-colors duration-500 underline underline-offset-8 decoration-gold/0 group-hover:decoration-gold/100">+91 22 6624 9100</span>
+                 <div className="flex flex-col">
+                   <span className="text-[9px] uppercase tracking-widest text-background/40 font-bold">Front Desk</span>
+                   <span className="font-bold text-sm tracking-wide group-hover:text-gold transition-colors duration-500 underline underline-offset-4 decoration-gold/0 group-hover:decoration-gold/100">+91 22 6624 9100</span>
+                 </div>
               </a>
             </div>
           </div>
