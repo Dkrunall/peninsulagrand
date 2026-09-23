@@ -1735,7 +1735,7 @@ export const BLOGS_DATA: BlogPost[] = [
     ]
   },
   {
-    "slug": "hotel-for-corporate-meeting-in-andheri",
+    "slug": "conference-venue-in-andheri",
     "seoTitle": "Hotel for Corporate Meeting in Andheri | Conference Venue at Peninsula Grand",
     "title": "Hotel for Corporate Meeting in Andheri | Conference Venue at Peninsula Grand",
     "description": "Looking for a hotel for corporate meeting in Andheri? Peninsula Grand offers modern conference rooms, premium services, and easy airport access. Book your meeting venue today.",
