@@ -48,7 +48,7 @@ export default function BlogPage() {
                 {/* Number Indicator */}
                 <div className="absolute bottom-6 right-8 pointer-events-none">
                   <span className="text-[5vw] font-serif font-black text-white/10 italic">
-                    0{index + 1}
+                    {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
               </div>
