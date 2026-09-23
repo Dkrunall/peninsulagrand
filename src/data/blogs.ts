@@ -1035,7 +1035,7 @@ export const BLOGS_DATA: BlogPost[] = [
     "description": "Looking for hotels near Mumbai Airport? Discover why Hotel Peninsula Grand is among the best 4-star hotels near Mumbai Airport for business and leisure stays.",
     "image": "/new/DSC04109.jpg",
     "imageAlt": "Hotels Near Mumbai Airport",
-    "date": "2024-09-10",
+    "date": "2026-06-15",
     "category": "Hospitality",
     "content": [
       {
@@ -1331,7 +1331,7 @@ export const BLOGS_DATA: BlogPost[] = [
     "description": "Looking for a hotel for corporate meetings in Andheri? Discover premium meeting spaces, business amenities, and seamless hospitality at Hotel Peninsula Grand.",
     "image": "/new/DSC05924.jpg",
     "imageAlt": "Hotel for Corporate Meeting in Andheri",
-    "date": "2024-09-15",
+    "date": "2026-06-29",
     "category": "Corporate",
     "content": [
       {
@@ -1606,7 +1606,7 @@ export const BLOGS_DATA: BlogPost[] = [
     "description": "Looking for premium banquets in Andheri East? Discover elegant event spaces for weddings, receptions, birthdays, and corporate events at Hotel Peninsula Grand.",
     "image": "/events/926d589d-e536-45ad-a969-d35d9c655c82.jpg",
     "imageAlt": "Banquets in Andheri East",
-    "date": "2024-09-20",
+    "date": "2026-07-13",
     "category": "Banquets",
     "content": [
       {
@@ -1881,7 +1881,7 @@ export const BLOGS_DATA: BlogPost[] = [
     "description": "Looking for the perfect banquet hall for wedding in Mumbai? Discover Peninsula Grand in Andheri East with elegant spaces, premium catering, and seamless wedding planning services. Book your dream venue today.",
     "image": "/wedding/IMG_1518.jpeg",
     "imageAlt": "banquet hall for wedding",
-    "date": "2024-08-01",
+    "date": "2026-06-01",
     "category": "Weddings",
     "content": [
       {
@@ -2053,7 +2053,7 @@ export const BLOGS_DATA: BlogPost[] = [
     "description": "Looking for a hotel in Andheri East? Experience premium comfort, dining, and hospitality at Peninsula Grand near Mumbai Airport.",
     "image": "/hero-lobby.png",
     "imageAlt": "Hotel in Andheri East",
-    "date": "2026-05-18",
+    "date": "2026-09-07",
     "category": "Hotel",
     "content": [
       {
@@ -2318,7 +2318,7 @@ export const BLOGS_DATA: BlogPost[] = [
     "description": "Looking for a banquet hall for wedding or corporate events? Discover elegant banquet halls in Andheri East at Peninsula Grand.",
     "image": "/wedding/IMG_1518.jpeg",
     "imageAlt": "banquet hall for wedding and events in Andheri East",
-    "date": "2026-05-18",
+    "date": "2026-08-24",
     "category": "Weddings",
     "content": [
       {
@@ -2561,7 +2561,7 @@ export const BLOGS_DATA: BlogPost[] = [
     "description": "Looking for a hotel near airport in Mumbai? Discover premium comfort, dining, banquet halls, and easy airport access at Peninsula Grand.",
     "image": "/luxury_hotel_hero.png",
     "imageAlt": "hotel near airport in Mumbai",
-    "date": "2026-05-18",
+    "date": "2026-08-10",
     "category": "Hotel",
     "content": [
       {
@@ -2749,7 +2749,7 @@ export const BLOGS_DATA: BlogPost[] = [
     "description": "Looking for a hotel for corporate meeting in Andheri? Peninsula Grand offers modern conference rooms, premium services, and easy airport access. Book your meeting venue today.",
     "image": "/event-1.png",
     "imageAlt": "hotel for corporate meeting in andheri",
-    "date": "2026-05-05",
+    "date": "2026-07-27",
     "category": "Events",
     "content": [
       {
