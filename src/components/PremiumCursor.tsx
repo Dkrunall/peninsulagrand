@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useSpring, useMotionValue } from "framer-motion";
+import { m as motion, useSpring, useMotionValue } from "framer-motion";
 
 export function PremiumCursor() {
   const [isHovered, setIsHovered] = useState(false);

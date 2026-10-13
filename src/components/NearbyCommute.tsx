@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { m as motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Plane, Train, MapPin } from "lucide-react";
 
@@ -50,11 +50,11 @@ export function NearbyCommute() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
           >
-            <p className="text-[10px] uppercase tracking-[0.6em] font-black text-gold mb-5 md:mb-8 italic">Prime Location</p>
+            <p className="text-[10px] uppercase tracking-[0.6em] font-black text-gold-dark mb-5 md:mb-8 italic">Prime Location</p>
             <h2 className="text-2xl md:text-5xl font-serif text-foreground mb-6 md:mb-10 tracking-tighter leading-tight md:leading-none italic">
-              Everything<br/> <span className="text-gold font-light">at your doorstep.</span>
+              Everything<br/> <span className="text-gold-dark font-light">at your doorstep.</span>
             </h2>
-            <p className="text-base md:text-xl text-foreground/60 font-serif italic leading-relaxed mb-8 md:mb-12 md:max-w-md">
+            <p className="text-base md:text-xl text-foreground/75 font-serif italic leading-relaxed mb-8 md:mb-12 md:max-w-md">
               A five minutes' drive from the International Airport, situated right next to the Sakinaka Metro Station. The Peninsula Grand places the entire city within arm's reach.
             </p>
             <a
@@ -85,15 +85,15 @@ export function NearbyCommute() {
                     <Icon className="w-6 h-6 text-foreground group-hover:text-background transition-colors duration-700" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-[9px] uppercase tracking-[0.5em] font-black text-gold mb-1">{point.tag}</p>
+                    <p className="text-[9px] uppercase tracking-[0.5em] font-black text-gold-dark mb-1">{point.tag}</p>
                     <p className="text-base md:text-xl font-serif text-foreground font-bold leading-tight">{point.name}</p>
-                    <p className="text-xs text-foreground/40 italic mt-0.5">{point.sub}</p>
+                    <p className="text-xs text-foreground/70 italic mt-0.5">{point.sub}</p>
                   </div>
                   <div className="text-right shrink-0">
                     <span className="text-2xl md:text-4xl font-serif font-black text-foreground group-hover:text-gold transition-colors duration-700 leading-none">
                       {point.distance}
                     </span>
-                    <span className="text-xs uppercase tracking-widest font-black text-foreground/40 ml-1">{point.unit}</span>
+                    <span className="text-xs uppercase tracking-widest font-black text-foreground/70 ml-1">{point.unit}</span>
                   </div>
                 </motion.div>
               );

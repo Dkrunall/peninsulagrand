@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const TESTIMONIALS = [
@@ -110,8 +110,8 @@ export function TestimonialsSection() {
               </p>
               
               <div className="space-y-2">
-                <h4 className="text-xl md:text-2xl font-serif text-gold italic">{TESTIMONIALS[index].name}</h4>
-                <p className="text-[10px] uppercase tracking-[0.4em] font-black text-background/40">{TESTIMONIALS[index].role}</p>
+                <h3 className="text-xl md:text-2xl font-serif text-gold italic">{TESTIMONIALS[index].name}</h3>
+                <p className="text-[10px] uppercase tracking-[0.4em] font-black text-background/70">{TESTIMONIALS[index].role}</p>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -119,14 +119,14 @@ export function TestimonialsSection() {
 
         <div className="flex gap-8 mt-16 md:mt-24">
           <button 
-            onClick={prev}
+            aria-label="Previous testimonial" onClick={prev}
             className="w-14 h-14 rounded-full border border-background/10 flex items-center justify-center text-background hover:bg-gold hover:text-foreground hover:border-gold transition-all duration-500"
             data-cursor="pointer"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button 
-            onClick={next}
+            aria-label="Next testimonial" onClick={next}
             className="w-14 h-14 rounded-full border border-background/10 flex items-center justify-center text-background hover:bg-gold hover:text-foreground hover:border-gold transition-all duration-500"
             data-cursor="pointer"
           >

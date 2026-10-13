@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, HTMLMotionProps } from "framer-motion";
+import { m as motion, HTMLMotionProps } from "framer-motion";
 
 interface PremiumButtonProps extends Omit<HTMLMotionProps<"button">, "variant"> {
   children: React.ReactNode;

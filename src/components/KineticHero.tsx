@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import gsap from "gsap";
 import { Star, ChevronLeft, ChevronRight, Phone } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 
 const HERO_IMAGES = [
   "/new/DSC04109.jpg",
@@ -14,7 +13,6 @@ const HERO_IMAGES = [
 ];
 
 export function KineticHero() {
-  const heroRef = useRef<HTMLElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -25,37 +23,11 @@ export function KineticHero() {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    const mm = gsap.matchMedia();
-
-    mm.add("(min-width: 768px)", () => {
-      const ctx = gsap.context(() => {
-        gsap.fromTo(".hero-badge", { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.2 });
-        gsap.fromTo(".hero-title", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1.4, ease: "power3.out", delay: 0.4 });
-        gsap.fromTo(".hero-sub",   { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, ease: "power3.out", delay: 0.8 });
-        gsap.fromTo(".hero-cta",   { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1,   ease: "power3.out", delay: 1.1 });
-        gsap.fromTo(".hero-strip", { opacity: 0 },        { opacity: 1,        duration: 1,   ease: "power3.out", delay: 1.4 });
-      }, heroRef);
-      return () => ctx.revert();
-    });
-
-    mm.add("(max-width: 767px)", () => {
-      const ctx = gsap.context(() => {
-        gsap.fromTo(".hero-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.2 });
-        gsap.fromTo(".hero-sub",   { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "power3.out", delay: 0.5 });
-        gsap.fromTo(".hero-cta",   { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.7 });
-      }, heroRef);
-      return () => ctx.revert();
-    });
-
-    return () => mm.revert();
-  }, []);
-
   const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
   const prevImage = () => setCurrentImageIndex((prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length);
 
   return (
-    <section ref={heroRef} className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black">
+    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black">
 
       {/* Background Slider */}
       <div className="absolute inset-0 z-0">
@@ -77,6 +49,7 @@ export function KineticHero() {
               <Image
                 src={HERO_IMAGES[currentImageIndex]}
                 alt="Hotel Peninsula Grand"
+                sizes="100vw"
                 fill
                 className="object-cover"
                 priority
@@ -136,7 +109,7 @@ export function KineticHero() {
             "✓ 5 Restaurants On-Site",
             "✓ 24/7 Concierge",
           ].map((item, i) => (
-            <span key={i} className="text-xs font-semibold text-white/70 whitespace-nowrap tracking-wider">
+            <span key={i} className="text-xs font-semibold text-white/90 whitespace-nowrap tracking-wider">
               {item}
             </span>
           ))}

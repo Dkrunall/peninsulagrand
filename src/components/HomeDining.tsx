@@ -54,13 +54,18 @@ const OUTLETS = [
 ];
 
 function OutletImageSlider({ images, name }: { images: string[]; name: string }) {
-  const [current, setCurrent] = useState(0);
+  const [{ current, seen }, setSlide] = useState({ current: 0, seen: 1 });
+  const goto = (fn: (c: number) => number) =>
+    setSlide((s) => {
+      const n = fn(s.current);
+      return { current: n, seen: s.seen | (1 << n) };
+    });
 
   // Auto-advance every 3 seconds
   useEffect(() => {
     if (images.length <= 1) return;
     const timer = setInterval(() => {
-      setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+      goto((c) => (c === images.length - 1 ? 0 : c + 1));
     }, 3000);
     return () => clearInterval(timer);
   }, [images.length]);
@@ -68,12 +73,12 @@ function OutletImageSlider({ images, name }: { images: string[]; name: string })
   const prev = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
+    goto((c) => (c === 0 ? images.length - 1 : c - 1));
   };
   const next = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+    goto((c) => (c === images.length - 1 ? 0 : c + 1));
   };
 
   return (
@@ -83,38 +88,35 @@ function OutletImageSlider({ images, name }: { images: string[]; name: string })
           key={i}
           className={`absolute inset-0 transition-opacity duration-500 ${i === current ? "opacity-100" : "opacity-0"}`}
         >
-          <Image
+          {(i === current || (seen & (1 << i)) !== 0) && (
+<Image
             src={src}
             alt={`${name} ${i + 1}`}
             fill
             sizes="(max-width: 640px) 82vw, 380px"
             className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-            priority={i === 0}
           />
+)}
         </div>
       ))}
 
       {images.length > 1 && (
         <>
           <button
-            onClick={prev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/55 flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300"
+            aria-label="Previous image" onClick={prev}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-black/55 flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300"
           >
             <ChevronLeft className="w-4 h-4 text-white" />
           </button>
           <button
-            onClick={next}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/55 flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300"
+            aria-label="Next image" onClick={next}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-black/55 flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300"
           >
             <ChevronRight className="w-4 h-4 text-white" />
           </button>
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-0 z-10">
             {images.map((_, i) => (
-              <button
-                key={i}
-                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrent(i); }}
-                className={`rounded-full transition-all duration-300 ${i === current ? "w-4 h-1.5 bg-gold" : "w-1.5 h-1.5 bg-white/50"}`}
-              />
+              <button key={i} aria-label={`Show image ${i + 1}`} onClick={(e) => { e.preventDefault(); e.stopPropagation(); goto(() => i); }} className="w-6 h-6 flex items-center justify-center"><span className={`block rounded-full transition-all duration-300 ${i === current ? "w-4 h-1.5 bg-gold" : "w-1.5 h-1.5 bg-white/50"}`} /></button>
             ))}
           </div>
         </>
@@ -153,15 +155,15 @@ export function HomeDining() {
       <div className="px-6 md:px-16 mb-10 md:mb-12">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
-            <p className="text-[9px] uppercase tracking-[0.8em] font-black text-gold mb-3 italic">Signature Experiences</p>
+            <p className="text-[9px] uppercase tracking-[0.8em] font-black text-gold-dark mb-3 italic">Signature Experiences</p>
             <h2 className="text-2xl md:text-4xl font-serif text-foreground tracking-tighter leading-tight">
-              Culinary <span className="italic text-gold font-light">Alchemy.</span>
+              Culinary <span className="italic text-gold-dark font-light">Alchemy.</span>
             </h2>
-            <p className="text-sm text-foreground/40 italic mt-2">Drag to explore · 5 restaurants in-house</p>
+            <p className="text-sm text-foreground/70 italic mt-2">Drag to explore · 5 restaurants in-house</p>
           </div>
           <Link
             href="/dining"
-            className="hidden md:flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] font-black text-foreground/35 hover:text-gold transition-colors duration-300"
+            className="hidden md:flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] font-black text-foreground/70 hover:text-gold transition-colors duration-300"
           >
             All Outlets <ArrowRight className="w-3 h-3" />
           </Link>
@@ -189,25 +191,25 @@ export function HomeDining() {
               <span className="absolute top-3 left-3 z-10 bg-gold text-black text-[8px] uppercase tracking-[0.35em] font-black px-2.5 py-1 rounded-full pointer-events-none">
                 {outlet.badge}
               </span>
-              <span className="absolute top-3 right-3 z-10 text-[9px] font-black text-white/55 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-full tracking-widest pointer-events-none">
+              <span className="absolute top-3 right-3 z-10 text-[9px] font-black text-white/85 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-full tracking-widest pointer-events-none">
                 {outlet.id}
               </span>
             </div>
 
             {/* Info */}
             <div className="flex flex-col flex-1 p-5">
-              <p className="text-[8px] uppercase tracking-[0.45em] font-black text-gold mb-1.5">{outlet.category}</p>
+              <p className="text-[8px] uppercase tracking-[0.45em] font-black text-gold-dark mb-1.5">{outlet.category}</p>
               <h3 className="text-lg font-serif text-foreground italic tracking-tight mb-2 group-hover:text-gold transition-colors duration-300">
                 {outlet.name}
               </h3>
-              <p className="text-xs text-foreground/45 leading-relaxed flex-1 mb-4">{outlet.tagline}</p>
+              <p className="text-xs text-foreground/70 leading-relaxed flex-1 mb-4">{outlet.tagline}</p>
 
               <div className="flex items-center justify-between pt-3 border-t border-foreground/5">
                 <div className="flex items-center gap-1.5">
-                  <Clock className="w-3 h-3 text-gold flex-shrink-0" />
-                  <span className="text-[9px] font-bold text-foreground/40">{outlet.hours}</span>
+                  <Clock className="w-3 h-3 text-gold-dark flex-shrink-0" />
+                  <span className="text-[9px] font-bold text-foreground/70">{outlet.hours}</span>
                 </div>
-                <div className="flex items-center gap-1 text-[9px] font-black uppercase tracking-wide text-foreground/20 group-hover:text-gold transition-colors duration-300">
+                <div className="flex items-center gap-1 text-[9px] font-black uppercase tracking-wide text-foreground/70 group-hover:text-gold transition-colors duration-300">
                   In-House <ArrowRight className="w-2.5 h-2.5" />
                 </div>
               </div>
@@ -220,7 +222,7 @@ export function HomeDining() {
       </div>
 
       {/* Drag hint */}
-      <div className="flex items-center justify-center gap-3 mt-6 opacity-30">
+      <div className="flex items-center justify-center gap-3 mt-6">
         <ChevronLeft className="w-3.5 h-3.5 text-foreground" />
         <span className="text-[9px] uppercase tracking-[0.5em] font-black text-foreground">Drag to explore</span>
         <ChevronRight className="w-3.5 h-3.5 text-foreground" />
@@ -232,13 +234,13 @@ export function HomeDining() {
           {["5 On-Site Restaurants", "Bakery Open 24×7", "Rooftop Bar", "In-Room Dining"].map((t, i) => (
             <div key={i} className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-gold" />
-              <span className="text-[10px] font-semibold text-foreground/35 uppercase tracking-wide">{t}</span>
+              <span className="text-[10px] font-semibold text-foreground/70 uppercase tracking-wide">{t}</span>
             </div>
           ))}
         </div>
         <Link
           href="/dining"
-          className="flex md:hidden items-center gap-1.5 text-[10px] uppercase tracking-[0.4em] font-black text-foreground/35 hover:text-gold transition-colors duration-300"
+          className="flex md:hidden items-center gap-1.5 text-[10px] uppercase tracking-[0.4em] font-black text-foreground/70 hover:text-gold transition-colors duration-300"
         >
           All Outlets <ArrowRight className="w-3 h-3" />
         </Link>

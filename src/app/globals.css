@@ -7,6 +7,7 @@
   --accent-sand: 10 10% 90%;
   --accent-slate: 0 0% 48%;
   --gold: 45 61% 53%; /* #D4AF37 */
+  --gold-dark: 42 85% 27%; /* AA-contrast gold for text on light backgrounds */
   
   --glass-bg: hsla(40, 18%, 97%, 0.5);
   --glass-border: hsla(22, 15%, 15%, 0.1);
@@ -18,6 +19,7 @@
   --color-sand: hsl(var(--accent-sand));
   --color-slate: hsl(var(--accent-slate));
   --color-gold: hsl(var(--gold));
+  --color-gold-dark: hsl(var(--gold-dark));
   
   --font-sans: var(--font-dm-sans);
   --font-serif: var(--font-cormorant);
@@ -142,4 +144,38 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* Skip rendering work for off-screen homepage sections until they approach the viewport */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+/* Hero entrance (CSS-only so the first paint does not wait on JS; the title never starts transparent, to keep LCP early) */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(var(--rise, 30px)); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hero-slide {
+  from { transform: translateY(var(--rise, 30px)); }
+  to { transform: none; }
+}
+@keyframes hero-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.hero-badge { --rise: -20px; animation: hero-rise 1s 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) both; }
+.hero-title { --rise: 30px; animation: hero-slide 1.2s 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) both; }
+.hero-sub { --rise: 20px; animation: hero-rise 1s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both; }
+.hero-cta { --rise: 20px; animation: hero-rise 0.9s 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both; }
+.hero-strip { animation: hero-fade 1s 1s ease-out both; }
+@media (min-width: 768px) {
+  .hero-title { --rise: 60px; animation-duration: 1.4s; animation-delay: 0.4s; }
+  .hero-sub { --rise: 30px; animation-delay: 0.8s; }
+  .hero-cta { --rise: 30px; animation-delay: 1.1s; }
+  .hero-strip { animation-delay: 1.4s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-badge, .hero-title, .hero-sub, .hero-cta, .hero-strip { animation: none; }
 }

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { Send, Instagram, Facebook, Twitter, MapPin, Phone, Mail } from "lucide-react";
 
 export function ModernFooter() {
@@ -52,7 +52,7 @@ export function ModernFooter() {
 
           {/* Contact Details */}
           <div className="md:col-span-3 space-y-10 pt-4">
-            <h3 className="text-[10px] uppercase tracking-[0.6em] font-black text-background/30 border-l border-gold/50 pl-4">Inquiries</h3>
+            <h3 className="text-[10px] uppercase tracking-[0.6em] font-black text-background/70 border-l border-gold/50 pl-4">Inquiries</h3>
             <div className="space-y-6">
               <a href="mailto:reservations@peninsulagrand.co.in" className="flex items-center gap-4 group" data-cursor="pointer">
                  <div className="w-10 h-10 rounded-full bg-background flex items-center justify-center shrink-0 group-hover:bg-gold transition-all duration-700 shadow-xl">
@@ -74,7 +74,7 @@ export function ModernFooter() {
                    <Phone className="w-4 h-4 text-foreground group-hover:text-background transition-colors" />
                  </div>
                  <div className="flex flex-col">
-                   <span className="text-[9px] uppercase tracking-widest text-background/40 font-bold">Front Desk</span>
+                   <span className="text-[9px] uppercase tracking-widest text-background/70 font-bold">Front Desk</span>
                    <span className="font-bold text-sm tracking-wide group-hover:text-gold transition-colors duration-500 underline underline-offset-4 decoration-gold/0 group-hover:decoration-gold/100">+91 22 6624 9100</span>
                  </div>
               </a>
@@ -83,7 +83,7 @@ export function ModernFooter() {
 
           {/* Location */}
           <div className="md:col-span-3 space-y-10 pt-4">
-            <h3 className="text-[10px] uppercase tracking-[0.6em] font-black text-background/30 border-l border-gold/50 pl-4">Sanctuary</h3>
+            <h3 className="text-[10px] uppercase tracking-[0.6em] font-black text-background/70 border-l border-gold/50 pl-4">Sanctuary</h3>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-background flex items-center justify-center shrink-0 shadow-lg">
@@ -109,10 +109,10 @@ export function ModernFooter() {
               className="object-contain group-hover:scale-110 transition-transform duration-700" 
             />
           </div>
-          <p className="text-[10px] tracking-[0.5em] uppercase font-black opacity-20">
+          <p className="text-[10px] tracking-[0.5em] uppercase font-black text-background/70">
             © {currentYear} Peninsula Grand Hotel. Managed by Peninsula Hospitality Group.
           </p>
-          <div className="text-[10px] uppercase tracking-[0.4em] font-black opacity-40">
+          <div className="text-[10px] uppercase tracking-[0.4em] font-black text-background/70">
             All Rights Reserved
           </div>
         </div>

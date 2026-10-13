@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
+import { m as motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { Home, Info, Bed, Utensils, Phone, Sparkles, Heart, Briefcase, ExternalLink, BookOpen, Users } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -129,9 +129,10 @@ export function FloatingNav() {
                 >
                   {hasDropdown(item) ? (
                     <Link
+                      aria-label={item.name}
                       href={item.href}
                       onClick={() => setHoveredItem(null)}
-                      className="group relative p-2.5 md:px-4 md:py-3 rounded-full transition-all duration-500 overflow-hidden flex items-center gap-2 outline-none hover:bg-foreground/5"
+                      className="group relative p-3 md:px-4 md:py-3 rounded-full transition-all duration-500 overflow-hidden flex items-center gap-2 outline-none hover:bg-foreground/5"
                       data-cursor="pointer"
                     >
                       <item.icon
@@ -150,8 +151,9 @@ export function FloatingNav() {
                     </Link>
                   ) : (
                     <Link
+                      aria-label={item.name}
                       href={item.href}
-                      className="group relative p-2.5 md:px-4 md:py-3 rounded-full transition-all duration-500 overflow-hidden flex items-center gap-2 outline-none hover:bg-foreground/5"
+                      className="group relative p-3 md:px-4 md:py-3 rounded-full transition-all duration-500 overflow-hidden flex items-center gap-2 outline-none hover:bg-foreground/5"
                       data-cursor="pointer"
                     >
                       <item.icon

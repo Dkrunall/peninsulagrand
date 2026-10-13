@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { m as motion, useInView } from "framer-motion";
 import { Users, Star, RefreshCw, Smile } from "lucide-react";
 
 const STATS = [
@@ -54,7 +54,7 @@ function StatCard({ stat, index }: { stat: typeof STATS[0]; index: number }) {
       <div className="text-4xl md:text-6xl font-serif text-background tracking-tight leading-none mb-3">
         {count.toLocaleString()}<span className="text-gold">{stat.suffix}</span>
       </div>
-      <p className="text-[10px] uppercase tracking-[0.5em] font-black text-background/40">
+      <p className="text-[10px] uppercase tracking-[0.5em] font-black text-background/70">
         {stat.label}
       </p>
     </motion.div>
