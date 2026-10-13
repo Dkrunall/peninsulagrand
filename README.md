@@ -34,3 +34,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Performance notes
+
+- Images in `public/` are pre-compressed (max 1920px) and served through the Next image optimizer (`next.config.ts`).
+- Below-the-fold homepage sections are lazy-loaded and use `content-visibility` (`.cv-auto` in `globals.css`).
+- Use the darker `text-gold-dark` class for gold text on light backgrounds to keep WCAG AA contrast.
